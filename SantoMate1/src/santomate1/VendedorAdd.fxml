@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="santomate1.VendedorAddController">
+   <children>
+      <ImageView fitHeight="768.0" fitWidth="1024.0" opacity="0.75" pickOnBounds="true" preserveRatio="true">
+         <effect>
+            <Lighting bumpInput="$null" diffuseConstant="2.0" specularConstant="0.0" specularExponent="0.0" surfaceScale="10.0">
+               <light>
+                  <Light.Distant azimuth="0.0" />
+               </light>
+            </Lighting>
+         </effect>
+         <image>
+            <Image url="@imagens/erva-mate-chimarrao.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="276.0" fitWidth="311.0" layoutX="374.0" layoutY="58.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagens/SANTO%20MATE.png" />
+         </image>
+      </ImageView>
+      <TextField alignment="CENTER" layoutX="408.0" layoutY="368.0" prefHeight="25.0" prefWidth="209.0" promptText="NOME">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+      </TextField>
+      <TextField alignment="CENTER" layoutX="408.0" layoutY="407.0" prefHeight="25.0" prefWidth="209.0" promptText="CPF">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+      </TextField>
+      <TextField alignment="CENTER" layoutX="408.0" layoutY="446.0" prefHeight="25.0" prefWidth="209.0" promptText="TELEFONE">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+      </TextField>
+      <TextField alignment="CENTER" layoutX="408.0" layoutY="486.0" prefHeight="25.0" prefWidth="209.0" promptText="SALÁRIO">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+      </TextField>
+      <TextField alignment="CENTER" layoutX="408.0" layoutY="523.0" prefHeight="25.0" prefWidth="209.0" promptText="CEP">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+      </TextField>
+      <Button layoutX="481.0" layoutY="625.0" mnemonicParsing="false" style="-fx-background-color: #d9d9d9; -fx-border-radius: 5; -fx-border-width: 2; -fx-border-color: #000;" text="Voltar">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
+   </children>
+</AnchorPane>

@@ -9,8 +9,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="674.0" prefWidth="1015.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="santomate1.MenuGerenteController">
+<AnchorPane id="AnchorPane" prefHeight="674.0" prefWidth="1015.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="santomate1.MenuGerenteController">
    <children>
       <ImageView fitHeight="768.0" fitWidth="1024.0" opacity="0.75" pickOnBounds="true" preserveRatio="true">
          <effect>
@@ -21,15 +20,15 @@
             </Lighting>
          </effect>
          <image>
-            <Image url="@erva-mate-chimarrao.jpg" />
+            <Image url="@imagens/erva-mate-chimarrao.jpg" />
          </image>
       </ImageView>
       <ImageView fitHeight="276.0" fitWidth="311.0" layoutX="385.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@SANTO%20MATE.png" />
+            <Image url="@imagens/SANTO%20MATE.png" />
          </image>
       </ImageView>
-      <Button layoutX="501.0" layoutY="645.0" mnemonicParsing="false" style="-fx-background-color: #d9d9d9; -fx-border-radius: 5; -fx-border-width: 2; -fx-border-color: #000;" text="Fechar">
+      <Button layoutX="501.0" layoutY="645.0" mnemonicParsing="false" style="-fx-background-color: #d9d9d9; -fx-border-radius: 5; -fx-border-width: 2; -fx-border-color: #000;" text="Voltar">
          <font>
             <Font size="14.0" />
          </font>
@@ -44,7 +43,12 @@
             <Font name="Arial" size="16.0" />
          </font>
       </Button>
-      <Button layoutX="422.0" layoutY="477.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="202.0" style="-fx-border-color: #000; -fx-border-radius: 5; -fx-border-width: 2; -fx-background-color: #d9d9d9;" text="Gerenciar Vendedores">
+      <Button layoutX="422.0" layoutY="477.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="202.0" style="-fx-border-color: #000; -fx-border-radius: 5; -fx-border-width: 2; -fx-background-color: #d9d9d9;" text="Adicionar Vendedor">
+         <font>
+            <Font name="Arial" size="16.0" />
+         </font>
+      </Button>
+      <Button layoutX="421.0" layoutY="530.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="202.0" style="-fx-border-color: #000; -fx-border-radius: 5; -fx-border-width: 2; -fx-background-color: #d9d9d9;" text="Remover Vendedor">
          <font>
             <Font name="Arial" size="16.0" />
          </font>

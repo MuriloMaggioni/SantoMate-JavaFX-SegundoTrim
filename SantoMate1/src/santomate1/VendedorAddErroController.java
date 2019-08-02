@@ -14,7 +14,7 @@ import javafx.fxml.Initializable;
  *
  * @author 05200251
  */
-public class MenuGerenteController implements Initializable {
+public class VendedorAddErroController implements Initializable {
 
     /**
      * Initializes the controller class.
