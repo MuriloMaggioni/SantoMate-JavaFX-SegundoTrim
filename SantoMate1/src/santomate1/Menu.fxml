@@ -23,12 +23,12 @@
             </Lighting>
          </effect>
       </ImageView>
-      <Button layoutX="411.0" layoutY="362.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="202.0" style="-fx-border-color: #000; -fx-border-radius: 5; -fx-border-width: 2; -fx-background-color: #d9d9d9;" text="Logar Como Gerente">
+      <Button fx:id="logGerente" layoutX="411.0" layoutY="362.0" mnemonicParsing="false" onAction="#loginG" prefHeight="25.0" prefWidth="202.0" style="-fx-border-color: #000; -fx-border-radius: 5; -fx-border-width: 2; -fx-background-color: #d9d9d9;" text="Logar Como Gerente">
          <font>
             <Font name="Arial" size="16.0" />
          </font>
       </Button>
-      <Button layoutX="411.0" layoutY="415.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="202.0" style="-fx-border-radius: 5; -fx-border-width: 2; -fx-border-color: #000; -fx-background-color: #d9d9d9;" text="Logar Como Vendedor">
+      <Button fx:id="logVendedor" layoutX="411.0" layoutY="415.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="202.0" style="-fx-border-radius: 5; -fx-border-width: 2; -fx-border-color: #000; -fx-background-color: #d9d9d9;" text="Logar Como Vendedor">
          <font>
             <Font name="Arial" size="16.0" />
          </font>

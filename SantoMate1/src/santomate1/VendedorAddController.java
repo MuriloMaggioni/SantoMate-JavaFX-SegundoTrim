@@ -7,7 +7,9 @@ package santomate1;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.TextField;
 
 /**
  * FXML Controller class
@@ -16,12 +18,30 @@ import javafx.fxml.Initializable;
  */
 public class VendedorAddController implements Initializable {
 
+    @FXML
+    private TextField insertName;
+    @FXML
+    private TextField inserCPF;
+    @FXML
+    private TextField inserTel;
+    @FXML
+    private TextField inserSal;
+    @FXML
+    private TextField inserCEP;
+
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
-    
+    }
+    public void txtAll(){
+        System.out.println(insertName.getText());
+        System.out.println(inserCPF.getText());
+        System.out.println(inserTel.getText());
+        System.out.println(inserSal.getText());
+        System.out.println(inserCEP.getText());
+        
+    }
 }
