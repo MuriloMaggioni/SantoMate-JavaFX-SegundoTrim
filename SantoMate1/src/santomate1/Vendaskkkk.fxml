@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="santomate1.VendaskkkkController">
+   <children>
+      <ComboBox layoutX="38.0" layoutY="28.0" prefWidth="150.0" promptText="Marca" style="-fx-background-color: #d9d9d9; -fx-border-color: #000; -fx-border-radius: 5; -fx-border-width: 2;" />
+      <ComboBox layoutX="347.0" layoutY="150.0" prefWidth="150.0" promptText="Tipo" style="-fx-background-color: #d9d9d9; -fx-border-color: #000; -fx-border-radius: 5; -fx-border-width: 2;" />
+      <ComboBox layoutX="38.0" layoutY="150.0" prefWidth="150.0" promptText="Vendedor" style="-fx-background-color: #d9d9d9; -fx-border-color: #000; -fx-border-radius: 5; -fx-border-width: 2;" />
+      <ComboBox layoutX="38.0" layoutY="91.0" prefWidth="150.0" promptText="Quantidade" style="-fx-background-color: #d9d9d9; -fx-border-color: #000; -fx-border-radius: 5; -fx-border-width: 2;" />
+      <ComboBox layoutX="347.0" layoutY="28.0" prefWidth="150.0" promptText="Peso" style="-fx-background-color: #d9d9d9; -fx-border-color: #000; -fx-border-radius: 5; -fx-border-width: 2;" />
+      <Text fontSmoothingType="LCD" layoutX="178.0" layoutY="228.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DADOS DO COMPRADOR">
+         <font>
+            <Font name="Arial" size="20.0" />
+         </font>
+      </Text>
+      <TextField layoutX="125.0" layoutY="256.0" prefHeight="25.0" prefWidth="350.0" promptText="NOME" />
+      <TextField layoutX="125.0" layoutY="297.0" prefHeight="25.0" prefWidth="350.0" promptText="CPF" />
+      <Button layoutX="61.0" layoutY="338.0" mnemonicParsing="false" style="-fx-background-color: #d9d9d9; -fx-border-color: #000; -fx-border-radius: 5; -fx-border-width: 2;" text="Voltar" />
+      <Button layoutX="466.0" layoutY="338.0" mnemonicParsing="false" style="-fx-background-color: #d9d9d9; -fx-border-color: #000; -fx-border-radius: 5; -fx-border-width: 2;" text="Finalizar venda" />
+   </children>
+</AnchorPane>
