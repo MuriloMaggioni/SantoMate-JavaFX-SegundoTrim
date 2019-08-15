@@ -16,10 +16,18 @@ import javafx.scene.control.Button;
  *
  * @author 05200251
  */
-public class VendedorRemoveController implements Initializable {
+public class MenuGerenteController implements Initializable {
 
     @FXML
     private Button voltar;
+    @FXML
+    private Button histVendas;
+    @FXML
+    private Button addE;
+    @FXML
+    private Button addV;
+    @FXML
+    private Button removV;
 
     /**
      * Initializes the controller class.

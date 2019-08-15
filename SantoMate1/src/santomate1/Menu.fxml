@@ -28,7 +28,7 @@
             <Font name="Arial" size="16.0" />
          </font>
       </Button>
-      <Button fx:id="logVendedor" layoutX="411.0" layoutY="415.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="202.0" style="-fx-border-radius: 5; -fx-border-width: 2; -fx-border-color: #000; -fx-background-color: #d9d9d9;" text="Logar Como Vendedor">
+      <Button fx:id="logVendedor" layoutX="411.0" layoutY="415.0" mnemonicParsing="false" onAction="#loginV" prefHeight="25.0" prefWidth="202.0" style="-fx-border-radius: 5; -fx-border-width: 2; -fx-border-color: #000; -fx-background-color: #d9d9d9;" text="Logar Como Vendedor">
          <font>
             <Font name="Arial" size="16.0" />
          </font>
@@ -38,7 +38,7 @@
             <Image url="@imagens/SANTO%20MATE.png" />
          </image>
       </ImageView>
-      <Button layoutX="481.0" layoutY="625.0" mnemonicParsing="false" style="-fx-background-color: #d9d9d9; -fx-border-radius: 5; -fx-border-width: 2; -fx-border-color: #000;" text="Fechar">
+      <Button fx:id="close" layoutX="481.0" layoutY="625.0" mnemonicParsing="false" onAction="#fechaEssaMerda" style="-fx-background-color: #d9d9d9; -fx-border-radius: 5; -fx-border-width: 2; -fx-border-color: #000;" text="Fechar">
          <font>
             <Font size="14.0" />
          </font></Button>

@@ -16,6 +16,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 /**
@@ -23,26 +24,27 @@ import javafx.stage.Stage;
  *
  * @author 05200251
  */
-public class MenuController implements Initializable {
+public class LoginGerenteController implements Initializable {
 
     @FXML
-    private Button logGerente;
+    private TextField insert;
     @FXML
-    private Button logVendedor;
-    @FXML
-    private Button close;
-    
+    private Button voltar;
+
+    /**
+     * Initializes the controller class.
+     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
-    
+
     @FXML
-    private void loginG (ActionEvent event){
+    private void voltaMenu(ActionEvent event) {
         Stage stage = (Stage)((Node) event.getSource()).getScene().getWindow();
         stage.close();
         try{
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("GerenteLogin.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Menu.fxml"));
             Parent root = loader.load();
             
             Scene scene = new Scene(root);
@@ -53,29 +55,5 @@ public class MenuController implements Initializable {
             System.err.println("DEU PAULERA!");
             ex.printStackTrace();
         }
-    }
-    
-    @FXML
-    private void loginV (ActionEvent event){
-        Stage stage = (Stage)((Node) event.getSource()).getScene().getWindow();
-        stage.close();
-        try{
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("Vendas.fxml"));
-            Parent root = loader.load();
-            
-            Scene scene = new Scene(root);
-            Stage pt1 = new Stage();
-            pt1.setScene(scene);
-            pt1.show();
-        } catch (IOException ex){
-            System.err.println("DEU PAULERA!");
-            ex.printStackTrace();
-        }
-    }
-    
-    @FXML
-    private void fechaEssaMerda (ActionEvent event){
-        Stage stage = (Stage)((Node) event.getSource()).getScene().getWindow();
-        stage.close();
     }
 }

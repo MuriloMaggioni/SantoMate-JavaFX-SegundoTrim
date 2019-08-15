@@ -9,8 +9,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="santomate1.EstoqueAddController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="santomate1.EstoqueAddController">
    <children>
       <ImageView fitHeight="768.0" fitWidth="1024.0" opacity="0.75" pickOnBounds="true" preserveRatio="true">
          <effect>
@@ -29,7 +28,7 @@
             <Image url="@imagens/SANTO%20MATE.png" />
          </image>
       </ImageView>
-      <Button layoutX="480.0" layoutY="624.0" mnemonicParsing="false" style="-fx-background-color: #d9d9d9; -fx-border-radius: 5; -fx-border-width: 2; -fx-border-color: #000;" text="Voltar">
+      <Button fx:id="voltar" layoutX="480.0" layoutY="624.0" mnemonicParsing="false" style="-fx-background-color: #d9d9d9; -fx-border-radius: 5; -fx-border-width: 2; -fx-border-color: #000;" text="Voltar">
          <font>
             <Font size="14.0" />
          </font>
@@ -49,7 +48,7 @@
             <Cursor fx:constant="DEFAULT" />
          </cursor>
       </ComboBox>
-      <Button layoutX="430.0" layoutY="567.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="165.0" style="-fx-background-color: #d9d9d9; -fx-border-radius: 5; -fx-border-width: 2; -fx-border-color: #000;" text="Adicionar">
+      <Button fx:id="add" layoutX="430.0" layoutY="567.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="165.0" style="-fx-background-color: #d9d9d9; -fx-border-radius: 5; -fx-border-width: 2; -fx-border-color: #000;" text="Adicionar">
          <font>
             <Font size="14.0" />
          </font>

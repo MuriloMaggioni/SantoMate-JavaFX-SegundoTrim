@@ -7,7 +7,9 @@ package santomate1;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 
 /**
  * FXML Controller class
@@ -15,6 +17,11 @@ import javafx.fxml.Initializable;
  * @author 05200251
  */
 public class EstoqueAddController implements Initializable {
+
+    @FXML
+    private Button voltar;
+    @FXML
+    private Button add;
 
     /**
      * Initializes the controller class.

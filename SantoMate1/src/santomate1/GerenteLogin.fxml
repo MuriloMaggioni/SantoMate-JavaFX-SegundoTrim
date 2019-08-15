@@ -29,7 +29,7 @@
             <Font name="Arial Black" size="26.0" />
          </font>
       </Text>
-      <TextField alignment="CENTER" layoutX="381.0" layoutY="479.0" prefHeight="25.0" prefWidth="284.0" promptText="SENHA">
+      <TextField fx:id="insert" alignment="CENTER" layoutX="381.0" layoutY="479.0" prefHeight="25.0" prefWidth="284.0" promptText="SENHA">
          <font>
             <Font name="Arial" size="12.0" />
          </font>
@@ -39,7 +39,7 @@
             <Image url="@imagens/SANTO%20MATE.png" />
          </image>
       </ImageView>
-      <Button layoutX="491.0" layoutY="635.0" mnemonicParsing="false" style="-fx-background-color: #d9d9d9; -fx-border-radius: 5; -fx-border-width: 2; -fx-border-color: #000;" text="Voltar">
+      <Button fx:id="voltar" layoutX="491.0" layoutY="635.0" mnemonicParsing="false" onAction="#voltaMenu" style="-fx-background-color: #d9d9d9; -fx-border-radius: 5; -fx-border-width: 2; -fx-border-color: #000;" text="Voltar">
          <font>
             <Font size="14.0" />
          </font>
