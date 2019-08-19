@@ -53,9 +53,15 @@
             <Font name="Arial" size="14.0" />
          </font>
       </TextField>
-      <Button layoutX="481.0" layoutY="625.0" mnemonicParsing="false" style="-fx-background-color: #d9d9d9; -fx-border-radius: 5; -fx-border-width: 2; -fx-border-color: #000;" text="Voltar">
+      <Button fx:id="add" layoutX="468.5" layoutY="565.0" mnemonicParsing="false" onAction="#addVendedor" style="-fx-background-color: #d9d9d9; -fx-border-radius: 5; -fx-border-width: 2; -fx-border-color: #000;" text="Adicionar">
          <font>
             <Font size="14.0" />
-         </font></Button>
+         </font>
+      </Button>
+      <Button fx:id="voltar" layoutX="481.0" layoutY="625.0" mnemonicParsing="false" onAction="#voltaMenu" style="-fx-background-color: #d9d9d9; -fx-border-radius: 5; -fx-border-width: 2; -fx-border-color: #000;" text="Voltar">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

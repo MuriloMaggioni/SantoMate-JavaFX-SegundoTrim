@@ -28,22 +28,22 @@
             <Image url="@imagens/SANTO%20MATE.png" />
          </image>
       </ImageView>
-      <Button fx:id="voltar" layoutX="480.0" layoutY="624.0" mnemonicParsing="false" style="-fx-background-color: #d9d9d9; -fx-border-radius: 5; -fx-border-width: 2; -fx-border-color: #000;" text="Voltar">
+      <Button fx:id="voltar" layoutX="480.0" layoutY="624.0" mnemonicParsing="false" onAction="#voltaMenu" style="-fx-background-color: #d9d9d9; -fx-border-radius: 5; -fx-border-width: 2; -fx-border-color: #000;" text="Voltar">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <ComboBox layoutX="392.0" layoutY="363.0" prefHeight="34.0" prefWidth="241.0" promptText="Marca" style="-fx-background-color: #d9d9d9; -fx-border-color: #000; -fx-border-radius: 5; -fx-border-width: 2;">
+      <ComboBox fx:id="marca" layoutX="392.0" layoutY="363.0" prefHeight="34.0" prefWidth="241.0" promptText="Marca" style="-fx-background-color: #d9d9d9; -fx-border-color: #000; -fx-border-radius: 5; -fx-border-width: 2;">
          <cursor>
             <Cursor fx:constant="DEFAULT" />
          </cursor>
       </ComboBox>
-      <ComboBox layoutX="392.0" layoutY="518.0" prefHeight="34.0" prefWidth="241.0" promptText="Quantidade" style="-fx-background-color: #d9d9d9; -fx-border-color: #000; -fx-border-radius: 5; -fx-border-width: 2;">
+      <ComboBox fx:id="quant" layoutX="392.0" layoutY="518.0" prefHeight="34.0" prefWidth="241.0" promptText="Quantidade" style="-fx-background-color: #d9d9d9; -fx-border-color: #000; -fx-border-radius: 5; -fx-border-width: 2;">
          <cursor>
             <Cursor fx:constant="DEFAULT" />
          </cursor>
       </ComboBox>
-      <ComboBox layoutX="392.0" layoutY="416.0" prefHeight="34.0" prefWidth="241.0" promptText="Tipo" style="-fx-background-color: #d9d9d9; -fx-border-color: #000; -fx-border-radius: 5; -fx-border-width: 2;">
+      <ComboBox fx:id="tipo" layoutX="392.0" layoutY="416.0" prefHeight="34.0" prefWidth="241.0" promptText="Tipo" style="-fx-background-color: #d9d9d9; -fx-border-color: #000; -fx-border-radius: 5; -fx-border-width: 2;">
          <cursor>
             <Cursor fx:constant="DEFAULT" />
          </cursor>
@@ -53,7 +53,7 @@
             <Font size="14.0" />
          </font>
       </Button>
-      <ComboBox layoutX="392.0" layoutY="468.0" prefHeight="34.0" prefWidth="241.0" promptText="Peso" style="-fx-background-color: #d9d9d9; -fx-border-color: #000; -fx-border-radius: 5; -fx-border-width: 2;">
+      <ComboBox fx:id="peso" layoutX="392.0" layoutY="468.0" prefHeight="34.0" prefWidth="241.0" promptText="Peso" style="-fx-background-color: #d9d9d9; -fx-border-color: #000; -fx-border-radius: 5; -fx-border-width: 2;">
          <cursor>
             <Cursor fx:constant="DEFAULT" />
          </cursor>

@@ -56,4 +56,24 @@ public class LoginGerenteController implements Initializable {
             ex.printStackTrace();
         }
     }
+    
+    
+    //NÂO FUNCIONA A SENHA, SÓ REDIRICIONA!!!!!!!!!!!!!!!!!!!!!!!
+    @FXML
+    private void insereSenha(ActionEvent event) {
+        Stage stage = (Stage)((Node) event.getSource()).getScene().getWindow();
+        stage.close();
+        try{
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("GerenteMenu.fxml"));
+            Parent root = loader.load();
+            
+            Scene scene = new Scene(root);
+            Stage pt1 = new Stage();
+            pt1.setScene(scene);
+            pt1.show();
+        } catch (IOException ex){
+            System.err.println("DEU PAULERA!");
+            ex.printStackTrace();
+        }
+    }
 }

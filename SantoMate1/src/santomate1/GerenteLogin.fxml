@@ -31,14 +31,19 @@
       </Text>
       <TextField fx:id="insert" alignment="CENTER" layoutX="381.0" layoutY="479.0" prefHeight="25.0" prefWidth="284.0" promptText="SENHA">
          <font>
-            <Font name="Arial" size="12.0" />
+            <Font name="Arial" size="14.0" />
          </font>
       </TextField>
       <ImageView fitHeight="276.0" fitWidth="311.0" layoutX="385.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@imagens/SANTO%20MATE.png" />
          </image>
-      </ImageView>
+      </ImageView>      
+      <Button fx:id="inserir" layoutX="491.0" layoutY="525.0" mnemonicParsing="false" onAction="#insereSenha" style="-fx-background-color: #d9d9d9; -fx-border-radius: 5; -fx-border-width: 2; -fx-border-color: #000;" text="Inserir">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
       <Button fx:id="voltar" layoutX="491.0" layoutY="635.0" mnemonicParsing="false" onAction="#voltaMenu" style="-fx-background-color: #d9d9d9; -fx-border-radius: 5; -fx-border-width: 2; -fx-border-color: #000;" text="Voltar">
          <font>
             <Font size="14.0" />

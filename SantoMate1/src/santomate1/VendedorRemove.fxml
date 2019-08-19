@@ -38,7 +38,7 @@
             <Image url="@imagens/SANTO%20MATE.png" />
          </image>
       </ImageView>
-      <Button fx:id="voltar" layoutX="491.0" layoutY="635.0" mnemonicParsing="false" style="-fx-background-color: #d9d9d9; -fx-border-radius: 5; -fx-border-width: 2; -fx-border-color: #000;" text="Voltar">
+      <Button fx:id="voltar" layoutX="491.0" layoutY="635.0" mnemonicParsing="false" onAction="#voltarMenu" style="-fx-background-color: #d9d9d9; -fx-border-radius: 5; -fx-border-width: 2; -fx-border-color: #000;" text="Voltar">
          <font>
             <Font size="14.0" />
          </font>
