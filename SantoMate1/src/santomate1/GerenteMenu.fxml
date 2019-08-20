@@ -4,54 +4,63 @@
 <?import javafx.scene.effect.*?>
 <?import javafx.scene.image.*?>
 <?import java.lang.*?>
+<?import java.net.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
 <AnchorPane id="AnchorPane" prefHeight="674.0" prefWidth="1015.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="santomate1.MenuGerenteController">
-   <children>
-      <ImageView fitHeight="768.0" fitWidth="1024.0" opacity="0.75" pickOnBounds="true" preserveRatio="true">
-         <effect>
-            <Lighting bumpInput="$null" diffuseConstant="2.0" specularConstant="0.0" specularExponent="0.0" surfaceScale="10.0">
-               <light>
-                  <Light.Distant azimuth="0.0" />
-               </light>
-            </Lighting>
-         </effect>
-         <image>
-            <Image url="@imagens/erva-mate-chimarrao.jpg" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="276.0" fitWidth="311.0" layoutX="385.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@imagens/SANTO%20MATE.png" />
-         </image>
-      </ImageView>
-      <Button fx:id="voltar" layoutX="501.0" layoutY="645.0" mnemonicParsing="false" onAction="#voltaMenu" style="-fx-background-color: #d9d9d9; -fx-border-radius: 5; -fx-border-width: 2; -fx-border-color: #000;" text="Voltar">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Button>
-      <Button fx:id="histVendas" layoutX="421.0" layoutY="425.0" mnemonicParsing="false" onAction="#verHistorico" prefHeight="25.0" prefWidth="202.0" style="-fx-border-color: #000; -fx-border-radius: 5; -fx-border-width: 2; -fx-background-color: #d9d9d9;" text="Histórico de Vendas">
-         <font>
-            <Font name="Arial" size="16.0" />
-         </font>
-      </Button>
-      <Button fx:id="addE" layoutX="421.0" layoutY="372.0" mnemonicParsing="false" onAction="#addEstoque" prefHeight="25.0" prefWidth="202.0" style="-fx-border-color: #000; -fx-border-radius: 5; -fx-border-width: 2; -fx-background-color: #d9d9d9;" text="Adicionar Estoque">
-         <font>
-            <Font name="Arial" size="16.0" />
-         </font>
-      </Button>
-      <Button fx:id="addV" layoutX="422.0" layoutY="477.0" mnemonicParsing="false" onAction="#addVendedor" prefHeight="25.0" prefWidth="202.0" style="-fx-border-color: #000; -fx-border-radius: 5; -fx-border-width: 2; -fx-background-color: #d9d9d9;" text="Adicionar Vendedor">
-         <font>
-            <Font name="Arial" size="16.0" />
-         </font>
-      </Button>
-      <Button fx:id="removV" layoutX="421.0" layoutY="530.0" mnemonicParsing="false" onAction="#removeVendedor" prefHeight="25.0" prefWidth="202.0" style="-fx-border-color: #000; -fx-border-radius: 5; -fx-border-width: 2; -fx-background-color: #d9d9d9;" text="Remover Vendedor">
-         <font>
-            <Font name="Arial" size="16.0" />
-         </font>
-      </Button>
-   </children>
+    <stylesheets>
+        <URL value="@CSSBotoes.css" />
+    </stylesheets> 
+    <children>
+        <ImageView fitHeight="768.0" fitWidth="1024.0" opacity="0.75" pickOnBounds="true" preserveRatio="true">
+            <effect>
+                <Lighting bumpInput="$null" diffuseConstant="2.0" specularConstant="0.0" specularExponent="0.0" surfaceScale="10.0">
+                    <light>
+                        <Light.Distant azimuth="0.0" />
+                    </light>
+                </Lighting>
+            </effect>
+            <image>
+                <Image url="@imagens/erva-mate-chimarrao.jpg" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="683.0" fitWidth="284.0" layoutX="380.0" opacity="0.63" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@imagens/whiteimage2.jpg" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="276.0" fitWidth="311.0" layoutX="415.0" layoutY="51.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@imagens/SANTO_MATE.png" />
+            </image>
+        </ImageView>
+        <Button fx:id="voltar" layoutX="500.0" layoutY="635.0" mnemonicParsing="false" onAction="#voltaMenu" text="Voltar">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Button>
+        <Button fx:id="histVendas" layoutX="421.0" layoutY="425.0" mnemonicParsing="false" onAction="#verHistorico" prefHeight="25.0" prefWidth="202.0" text="Histórico de Vendas">
+            <font>
+                <Font name="Arial" size="16.0" />
+            </font>
+        </Button>
+        <Button fx:id="addE" layoutX="421.0" layoutY="372.0" mnemonicParsing="false" onAction="#addEstoque" prefHeight="25.0" prefWidth="202.0" text="Adicionar Estoque">
+            <font>
+                <Font name="Arial" size="16.0" />
+            </font>
+        </Button>
+        <Button fx:id="addV" layoutX="422.0" layoutY="477.0" mnemonicParsing="false" onAction="#addVendedor" prefHeight="25.0" prefWidth="202.0" text="Adicionar Vendedor">
+            <font>
+                <Font name="Arial" size="16.0" />
+            </font>
+        </Button>
+        <Button fx:id="removV" layoutX="421.0" layoutY="530.0" mnemonicParsing="false" onAction="#removeVendedor" prefHeight="25.0" prefWidth="202.0" text="Remover Vendedor">
+            <font>
+                <Font name="Arial" size="16.0" />
+            </font>
+        </Button>
+    </children>
 </AnchorPane>

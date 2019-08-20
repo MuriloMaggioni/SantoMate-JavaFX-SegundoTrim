@@ -5,48 +5,62 @@
 <?import javafx.scene.image.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
+<?import java.net.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="santomate1.VendedorRemoveController">
+    <stylesheets>
+        <URL value="@CSSBotoes.css" />
+    </stylesheets>
     <children>
-      <ImageView fitHeight="768.0" fitWidth="1024.0" opacity="0.75" pickOnBounds="true" preserveRatio="true">
-         <effect>
-            <Lighting bumpInput="$null" diffuseConstant="2.0" specularConstant="0.0" specularExponent="0.0" surfaceScale="10.0">
-               <light>
-                  <Light.Distant azimuth="0.0" />
-               </light>
-            </Lighting>
-         </effect>
-         <image>
-            <Image url="@imagens/erva-mate-chimarrao.jpg" />
-         </image>
-      </ImageView>
-      <Text layoutX="312.0" layoutY="406.0" strokeType="OUTSIDE" strokeWidth="0.0" text="INSIRA O CPF DO VENDEDOR" textAlignment="CENTER" underline="true" wrappingWidth="422.822265625">
+        <ImageView fitHeight="768.0" fitWidth="1024.0" opacity="0.75" pickOnBounds="true" preserveRatio="true">
+            <effect>
+                <Lighting bumpInput="$null" diffuseConstant="2.0" specularConstant="0.0" specularExponent="0.0" surfaceScale="10.0">
+                    <light>
+                        <Light.Distant azimuth="0.0" />
+                    </light>
+                </Lighting>
+            </effect>
+            <image>
+                <Image url="@imagens/erva-mate-chimarrao.jpg" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="683.0" fitWidth="284.0" layoutX="371.0" layoutY="-1.0" opacity="0.63" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@imagens/whiteimage2.jpg" />
+            </image>
+        </ImageView>
+        <Text layoutX="312.0" layoutY="406.0" strokeType="OUTSIDE" strokeWidth="0.0" text="INSIRA O CPF" textAlignment="CENTER" underline="true" wrappingWidth="422.822265625">
+            <font>
+                <Font name="Arial Black" size="24.0" />
+            </font>
+        </Text>
+        <TextField alignment="CENTER" layoutX="371.0" layoutY="458.0" prefHeight="25.0" prefWidth="284.0" promptText="CPF">
+            <font>
+                <Font name="Arial" size="12.0" />
+            </font>
+        </TextField>
+        <ImageView fitHeight="276.0" fitWidth="311.0" layoutX="416.0" layoutY="54.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@imagens/SANTO_MATE.png" />
+            </image>
+        </ImageView>
+        <Button fx:id="voltar" layoutX="482.0" layoutY="635.0" mnemonicParsing="false" onAction="#voltarMenu" text="Voltar">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Button>
+        <Button layoutX="440.0" layoutY="514.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="144.0" text="Remover">
+            <font>
+                <Font name="Arial" size="14.0" />
+            </font>
+        </Button>
+      <Text layoutX="313.0" layoutY="440.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DO VENDEDOR" textAlignment="CENTER" underline="true" wrappingWidth="422.822265625">
          <font>
-            <Font name="Arial Black" size="26.0" />
+            <Font name="Arial Black" size="24.0" />
          </font>
       </Text>
-      <TextField alignment="CENTER" layoutX="381.0" layoutY="458.0" prefHeight="25.0" prefWidth="284.0" promptText="CPF">
-         <font>
-            <Font name="Arial" size="12.0" />
-         </font>
-      </TextField>
-      <ImageView fitHeight="276.0" fitWidth="311.0" layoutX="385.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@imagens/SANTO%20MATE.png" />
-         </image>
-      </ImageView>
-      <Button fx:id="voltar" layoutX="491.0" layoutY="635.0" mnemonicParsing="false" onAction="#voltarMenu" style="-fx-background-color: #d9d9d9; -fx-border-radius: 5; -fx-border-width: 2; -fx-border-color: #000;" text="Voltar">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Button>
-      <Button layoutX="452.0" layoutY="511.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="144.0" style="-fx-background-color: #d9d9d9; -fx-border-radius: 5; -fx-border-width: 2; -fx-border-color: #000;" text="Remover">
-         <font>
-            <Font name="Arial" size="14.0" />
-         </font>
-      </Button>
-   </children>
+    </children>
 </AnchorPane>
