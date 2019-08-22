@@ -16,6 +16,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.stage.Stage;
 
 /**
@@ -27,6 +28,10 @@ public class VendedorRemoveController implements Initializable {
 
     @FXML
     private Button voltar;
+    @FXML
+    private Button Remove;
+    @FXML
+    private ComboBox<?> Vendedor;
 
     /**
      * Initializes the controller class.
@@ -52,6 +57,10 @@ public class VendedorRemoveController implements Initializable {
             System.err.println("DEU PAULERA!");
             ex.printStackTrace();
         }
+    }
+
+    @FXML
+    private void demitidoOMerda(ActionEvent event) {
     }
     
 }

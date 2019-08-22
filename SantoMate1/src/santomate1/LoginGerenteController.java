@@ -30,6 +30,8 @@ public class LoginGerenteController implements Initializable {
     private TextField insert;
     @FXML
     private Button voltar;
+    @FXML
+    private Button inserir;
 
     /**
      * Initializes the controller class.
@@ -48,7 +50,7 @@ public class LoginGerenteController implements Initializable {
             Parent root = loader.load();
             
             Scene scene = new Scene(root);
-            Stage pt1 = new Stage();
+            Stage pt1 = new Stage();            
             pt1.setScene(scene);
             pt1.show();
         } catch (IOException ex){

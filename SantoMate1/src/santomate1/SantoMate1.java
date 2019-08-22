@@ -9,6 +9,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 /**
@@ -22,9 +23,14 @@ public class SantoMate1 extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("Menu.fxml"));
         
         Scene scene = new Scene(root);
+        // set icon
+        Image imagemTitulo = new Image(getClass().getResourceAsStream("imagens/SANTO_MATE.png"));
+        stage.getIcons().add(imagemTitulo);
         
         stage.setScene(scene);
         stage.show();
+        
+        
     }
 
     /**
