@@ -5,82 +5,121 @@
  */
 package santomate1;
 
-import java.util.Date;
+import javafx.beans.property.DoubleProperty;
+import javafx.beans.property.FloatProperty;
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleDoubleProperty;
+import javafx.beans.property.SimpleFloatProperty;
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 
-/**
- *
- * @author 05200251
- */
 public class Venda {
-    private int cpf;
-    private String nome;
-    private Date idade;
-    private int cep;
-    private Float salario;
-    private boolean ehGerente;
+    private IntegerProperty estoqueID;
+    private final StringProperty vendedorCPF;
+    private final StringProperty compradorNome;
+    private IntegerProperty compradorCPF;
+    private final IntegerProperty quant;
+    private final StringProperty tipo;
+    private final DoubleProperty peso;
+    private final StringProperty marca;
 
-    public Venda(int cpf, String nome, Date idade, int cep, Float salario, boolean ehGerente) {
-        this.cpf = cpf;
-        this.nome = nome;
-        this.idade = idade;
-        this.cep = cep;
-        this.salario = salario;
-        this.ehGerente = ehGerente;
+    public Venda(int estoqueID, String vendedorCPF, String compradorNome, int compradorCPF, int quant, String tipo, double peso, String marca) {
+        this.estoqueID = new SimpleIntegerProperty(estoqueID);
+        this.vendedorCPF = new SimpleStringProperty(vendedorCPF);
+        this.compradorNome = new SimpleStringProperty(compradorNome);
+        this.compradorCPF = new SimpleIntegerProperty(compradorCPF);
+        this.quant = new SimpleIntegerProperty(quant);
+        this.tipo = new SimpleStringProperty(tipo);
+        this.peso = new SimpleDoubleProperty(peso);
+        this.marca = new SimpleStringProperty(marca);
+    }
+
+    public Venda(int quant, String tipo, String marca, double peso, String vendedorCPF, String compradorNome) {
+        this.quant = new SimpleIntegerProperty(quant);
+        this.tipo = new SimpleStringProperty(tipo);
+        this.marca = new SimpleStringProperty(marca);
+        this.peso = new SimpleDoubleProperty(peso);
+        this.vendedorCPF = new SimpleStringProperty(vendedorCPF);
+        this.compradorNome = new SimpleStringProperty(compradorNome);; 
     }
     
-    public int getCpf() {
-        return cpf;
+    
+
+    public IntegerProperty getEstoqueID() {
+        return estoqueID;
     }
 
-    public void setCpf(int cpf) {
-        this.cpf = cpf;
+    public void setEstoqueID(int estoqueID) {
+        this.estoqueID.set(estoqueID);
     }
 
-    public String getNome() {
-        return nome;
+    public StringProperty getVendedorCPF() {
+        return vendedorCPF;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setVendedorCPF(String vendedorCPF) {
+        this.vendedorCPF.set(vendedorCPF);
     }
 
-    public Date getIdade() {
-        return idade;
+    public StringProperty getCompradorNome() {
+        return compradorNome;
     }
 
-    public void setIdade(Date idade) {
-        this.idade = idade;
+    public void setCompradorNome(String compradorNome) {
+        this.compradorNome.set(compradorNome);
     }
 
-    public int getCep() {
-        return cep;
+    public IntegerProperty getCompradorCPF() {
+        return compradorCPF;
     }
 
-    public void setCep(int cep) {
-        this.cep = cep;
+    public void setCompradorCPF(int compradorCPF) {
+        this.compradorCPF.set(compradorCPF);
     }
 
-    public Float getSalario() {
-        return salario;
+    public IntegerProperty getQuant() {
+        return quant;
     }
 
-    public void setSalario(Float salario) {
-        this.salario = salario;
+    public void setQuant(int quant) {
+        this.quant.set(quant);
     }
 
-    public boolean isEhGerente() {
-        return ehGerente;
+    public StringProperty getTipo() {
+        return tipo;
     }
 
-    public void setEhGerente(boolean ehGerente) {
-        this.ehGerente = ehGerente;
+    public void setTipo(String tipo) {
+        this.tipo.set(tipo);
+    }
+
+    public DoubleProperty getPeso() {
+        return peso;
+    }
+
+    public void setPeso(float peso) {
+        this.peso.set(peso);
+    }
+
+    public StringProperty getMarca() {
+        return marca;
+    }
+
+    public void setMarca(String marca) {
+        this.marca.set(marca);
+    }
+    
+    public StringProperty getQuantString(){ 
+        //return (StringProperty) quant;
+        return tipo;
     }
 
     @Override
     public String toString() {
-        return "Venda{" + "cpf=" + cpf + ", nome=" + nome +
-                ", idade=" + idade + ", cep=" + cep + ", ehGerente=" + ehGerente + '}';
-    }
-    
-    
+        return "Venda{" + "estoqueID=" + estoqueID + 
+                ", vendedorCPF=" + vendedorCPF + ", compradorNome=" + compradorNome + 
+                ", compradorCPF=" + compradorCPF + ", quant=" + quant + 
+                ", tipo=" + tipo + ", peso=" + peso + ", marca=" + marca + '}';
+    }    
 }
