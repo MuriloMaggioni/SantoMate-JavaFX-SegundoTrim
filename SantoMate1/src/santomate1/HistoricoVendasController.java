@@ -38,13 +38,13 @@ import javafx.stage.Stage;
 public class HistoricoVendasController implements Initializable {
 
     @FXML
-    private TableColumn<Venda, Integer> Quantidade;
+    private TableColumn<Venda, String> Quantidade;
     @FXML
     private TableColumn<Venda, String> Tipo;
     @FXML
     private TableColumn<Venda, String> Marca;
     @FXML
-    private TableColumn<Venda, DoubleProperty> Peso;
+    private TableColumn<Venda, String> Peso;
     @FXML
     private TableColumn<Venda, String> Vendedor;
     @FXML
@@ -66,10 +66,10 @@ public class HistoricoVendasController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         vendasTable.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
         // Initialize the columns.
-        //Quantidade.setCellValueFactory(cellData -> cellData.getValue().getQuantString());
+        Quantidade.setCellValueFactory(cellData -> cellData.getValue().getQuant().asString());
         Tipo.setCellValueFactory(cellData -> cellData.getValue().getTipo());
         Marca.setCellValueFactory(cellData -> cellData.getValue().getMarca());
-        //Peso.setCellValueFactory(cellData -> cellData.getValue().getPeso());
+        Peso.setCellValueFactory(cellData -> cellData.getValue().getPeso().asString());
         Vendedor.setCellValueFactory(cellData -> cellData.getValue().getVendedorCPF());
         Comprador.setCellValueFactory(cellData -> cellData.getValue().getCompradorNome());
         
