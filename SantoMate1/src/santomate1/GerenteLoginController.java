@@ -15,6 +15,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -24,7 +25,7 @@ import javafx.stage.Stage;
  *
  * @author 05200251
  */
-public class LoginGerenteController implements Initializable {
+public class GerenteLoginController implements Initializable {
 
     @FXML
     private TextField insert;
@@ -38,7 +39,8 @@ public class LoginGerenteController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        int senhaGerente = 1235;
+        
     }    
 
     @FXML
@@ -63,19 +65,31 @@ public class LoginGerenteController implements Initializable {
     //NÂO FUNCIONA A SENHA, SÓ REDIRICIONA!!!!!!!!!!!!!!!!!!!!!!!
     @FXML
     private void insereSenha(ActionEvent event) {
-        Stage stage = (Stage)((Node) event.getSource()).getScene().getWindow();
-        stage.close();
-        try{
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("GerenteMenu.fxml"));
-            Parent root = loader.load();
-            
-            Scene scene = new Scene(root);
-            Stage pt1 = new Stage();
-            pt1.setScene(scene);
-            pt1.show();
-        } catch (IOException ex){
-            System.err.println("DEU PAULERA!");
-            ex.printStackTrace();
+        String senhaInser = insert.getText();
+        String senhaGerente = "SantoMate1235";
+        if(senhaInser.equals(senhaGerente)){
+            Stage stage = (Stage)((Node) event.getSource()).getScene().getWindow();
+            stage.close();
+            try{
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("GerenteMenu.fxml"));
+                Parent root = loader.load();
+
+                Scene scene = new Scene(root);
+                Stage pt1 = new Stage();
+                pt1.setScene(scene);
+                pt1.show();
+            } catch (IOException ex){
+                System.err.println("DEU PAULERA!");
+                ex.printStackTrace();
+            }
+        }else{
+            Alert alertaSenha = new Alert(Alert.AlertType.WARNING);
+            alertaSenha.setTitle("Erro 404");
+            alertaSenha.setHeaderText("Senha Incorreta");
+            alertaSenha.setContentText("Tente Novamente");
+            alertaSenha.showAndWait();
         }
+        
     }
+
 }

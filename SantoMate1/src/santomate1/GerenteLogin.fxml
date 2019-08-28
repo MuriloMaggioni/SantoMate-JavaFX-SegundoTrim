@@ -11,7 +11,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="360.0" prefWidth="539.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="santomate1.LoginGerenteController">
+<AnchorPane id="AnchorPane" prefHeight="360.0" prefWidth="539.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="santomate1.GerenteLoginController">
     <stylesheets>
         <URL value="@CSSBotoes.css" />
     </stylesheets> 
@@ -58,7 +58,7 @@
                 <Font size="14.0" />
             </font>
         </Button>
-      <Text layoutX="312.0" layoutY="442.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DO GERENTE" textAlignment="CENTER" underline="true" wrappingWidth="422.822265625">
+      <Text layoutX="312.0" layoutY="442.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SENHA DO GERENTE" textAlignment="CENTER" underline="true" wrappingWidth="422.822265625">
          <font>
             <Font name="Arial Black" size="24.0" />
          </font>

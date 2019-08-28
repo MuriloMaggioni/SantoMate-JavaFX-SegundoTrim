@@ -52,5 +52,10 @@
                 <Font size="14.0" />
             </font>
         </Button>
+      <Label layoutX="382.0" layoutY="245.0" text="Santo Mate" textAlignment="CENTER" textOverrun="CLIP">
+         <font>
+            <Font name="Ebrima Bold" size="48.0" />
+         </font>
+      </Label>
     </children>
 </AnchorPane>
