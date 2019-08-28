@@ -11,21 +11,19 @@ import java.util.Date;
  *
  * @author 05200251
  */
-public class Vendedor {
+public class Comprador {
     private int cpf;
     private String nome;
     private Date idade;
     private int cep;
-    private Float salario;
 
-    public Vendedor(int cpf, String nome, Date idade, int cep, Float salario, boolean ehGerente) {
+    public Comprador(int cpf, String nome, Date idade, int cep) {
         this.cpf = cpf;
         this.nome = nome;
         this.idade = idade;
         this.cep = cep;
-        this.salario = salario;
     }
-    
+
     public int getCpf() {
         return cpf;
     }
@@ -58,17 +56,13 @@ public class Vendedor {
         this.cep = cep;
     }
 
-    public Float getSalario() {
-        return salario;
-    }
-
-    public void setSalario(Float salario) {
-        this.salario = salario;
-    }
-
     @Override
     public String toString() {
-        return "Venda{" + "cpf=" + cpf + ", nome=" + nome +
-                ", idade=" + idade + ", cep=" + cep + ", ehGerente=" + '}';
+        return "Comprador{" + "cpf=" + cpf + ", nome=" 
+                + nome + ", idade=" + idade + ", cep=" + cep + '}';
     }
+    
+    
+    
+    
 }

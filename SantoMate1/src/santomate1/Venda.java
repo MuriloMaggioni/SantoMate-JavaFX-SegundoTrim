@@ -17,31 +17,29 @@ import javafx.beans.property.StringProperty;
 public class Venda {
     private IntegerProperty estoqueID;
     private final StringProperty vendedorCPF;
-    private final StringProperty compradorNome;
-    private IntegerProperty compradorCPF;
+    private final StringProperty compradorCPF;
     private final IntegerProperty quant;
     private final StringProperty tipo;
     private final DoubleProperty peso;
     private final StringProperty marca;
 
-    public Venda(int estoqueID, String vendedorCPF, String compradorNome, int compradorCPF, int quant, String tipo, double peso, String marca) {
+    public Venda(int estoqueID, String vendedorCPF, String compradorCPF, int quant, String tipo, double peso, String marca) {
         this.estoqueID = new SimpleIntegerProperty(estoqueID);
         this.vendedorCPF = new SimpleStringProperty(vendedorCPF);
-        this.compradorNome = new SimpleStringProperty(compradorNome);
-        this.compradorCPF = new SimpleIntegerProperty(compradorCPF);
+        this.compradorCPF = new SimpleStringProperty(compradorCPF);
         this.quant = new SimpleIntegerProperty(quant);
         this.tipo = new SimpleStringProperty(tipo);
         this.peso = new SimpleDoubleProperty(peso);
         this.marca = new SimpleStringProperty(marca);
     }
 
-    public Venda(int quant, String tipo, String marca, double peso, String vendedorCPF, String compradorNome) {
+    public Venda(int quant, String tipo, String marca, double peso, String vendedorCPF, String compradorCPF) {
         this.quant = new SimpleIntegerProperty(quant);
         this.tipo = new SimpleStringProperty(tipo);
         this.marca = new SimpleStringProperty(marca);
         this.peso = new SimpleDoubleProperty(peso);
         this.vendedorCPF = new SimpleStringProperty(vendedorCPF);
-        this.compradorNome = new SimpleStringProperty(compradorNome);; 
+        this.compradorCPF = new SimpleStringProperty(compradorCPF);
     }
     
     
@@ -62,19 +60,11 @@ public class Venda {
         this.vendedorCPF.set(vendedorCPF);
     }
 
-    public StringProperty getCompradorNome() {
-        return compradorNome;
-    }
-
-    public void setCompradorNome(String compradorNome) {
-        this.compradorNome.set(compradorNome);
-    }
-
-    public IntegerProperty getCompradorCPF() {
+    public StringProperty getCompradorCPF() {
         return compradorCPF;
     }
 
-    public void setCompradorCPF(int compradorCPF) {
+    public void setCompradorCPF(String compradorCPF) {
         this.compradorCPF.set(compradorCPF);
     }
 
@@ -109,17 +99,11 @@ public class Venda {
     public void setMarca(String marca) {
         this.marca.set(marca);
     }
-    
-    public StringProperty getQuantString(){ 
-        //return (StringProperty) quant;
-        return tipo;
-    }
 
     @Override
     public String toString() {
         return "Venda{" + "estoqueID=" + estoqueID + 
-                ", vendedorCPF=" + vendedorCPF + ", compradorNome=" + compradorNome + 
-                ", compradorCPF=" + compradorCPF + ", quant=" + quant + 
+                ", vendedorCPF=" + vendedorCPF + ", compradorCPF=" + compradorCPF + ", quant=" + quant + 
                 ", tipo=" + tipo + ", peso=" + peso + ", marca=" + marca + '}';
     }    
 }
