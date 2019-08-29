@@ -7,6 +7,8 @@ package santomate1;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -15,15 +17,11 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-/**
- * FXML Controller class
- *
- * @author 05200251
- */
 public class VendedorAddController implements Initializable {
 
     @FXML
@@ -35,15 +33,13 @@ public class VendedorAddController implements Initializable {
     @FXML
     private TextField inserSal;
     @FXML
-    private TextField inserCEP;
+    private TextField inserIdade;
     @FXML
     private Button voltar;
     @FXML
     private Button add;
+    public ArrayList<Vendedor> vendedores;
 
-    /**
-     * Initializes the controller class.
-     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
@@ -53,7 +49,7 @@ public class VendedorAddController implements Initializable {
         System.out.println(inserCPF.getText());
         System.out.println(inserTel.getText());
         System.out.println(inserSal.getText());
-        System.out.println(inserCEP.getText());
+        System.out.println(inserIdade.getText());
         
     }
 
@@ -76,6 +72,40 @@ public class VendedorAddController implements Initializable {
     }
 
     @FXML
-    private void addVendedor(ActionEvent event) {
+    private void addVendedor(ActionEvent event) throws IOException, Exception {
+        boolean temp = true;
+        for(Vendedor vend : vendedores){
+            if (insertName.getText().equals(vend.getNome())) {
+                temp = false;
+                Alert dialogoInfo = new Alert(Alert.AlertType.ERROR);
+                dialogoInfo.setTitle("Falha no registro!");
+                dialogoInfo.setHeaderText("Nome ja Existente");
+                dialogoInfo.setContentText("Tente Novamente!");
+                dialogoInfo.showAndWait();
+                break;
+            }
+        }
+        if(temp){
+            Vendedor novovend = new Vendedor(inserCPF.getText(), insertName.getText(), inserIdade.getText(), inserTel.getText(), inserSal.getText());
+            registrarVendedor(novovend);
+            Parent proxTelaParent = FXMLLoader.load(getClass().getResource("GerenteMenu.fxml"));
+            Scene proxTelaScene = new Scene(proxTelaParent);
+            Stage tela = (Stage)((Node)event.getSource()).getScene().getWindow();
+            tela.setScene(proxTelaScene);
+            tela.show();    
+            Alert dialogoInfo = new Alert(Alert.AlertType.INFORMATION);
+            dialogoInfo.setTitle("Parabéns Gerente!");
+            dialogoInfo.setHeaderText("Vendedor Registrado com Sucesso!");
+            dialogoInfo.setContentText("Não atrase os salários em!");
+            dialogoInfo.showAndWait();
+        }
+    }
+
+    private void registrarVendedor(Vendedor vend) throws Exception {
+        SantoMate1.conexaobd.addVend(vend);
+    }
+    
+    private void setVendedores() throws Exception {
+        vendedores = SantoMate1.conexaobd.vendedoresCarreg();
     }
 }
