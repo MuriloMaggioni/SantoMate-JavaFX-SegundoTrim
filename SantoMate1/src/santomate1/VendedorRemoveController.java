@@ -7,7 +7,9 @@ package santomate1;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Iterator;
 import java.util.ResourceBundle;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -15,6 +17,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.stage.Stage;
@@ -25,6 +28,8 @@ import javafx.stage.Stage;
  * @author 05200251
  */
 public class VendedorRemoveController implements Initializable {
+    private ObservableList<Vendedor> Vendedores;
+    
 
     @FXML
     private Button voltar;
@@ -61,6 +66,38 @@ public class VendedorRemoveController implements Initializable {
 
     @FXML
     private void demitidoOMerda(ActionEvent event) {
+        if (Vendedor.getSelectionModel().getSelectedItem() != null) {
+
+            Vendedor c = ComandosSQL.buscaCPFVend(Vendedor.getSelectionModel().getSelectedItem().getNome());
+
+            if (c != null && ComandosSQL.remove(c)) {
+                    Alert alertaSenha = new Alert(Alert.AlertType.INFORMATION);
+                    alertaSenha.setTitle("PARABÈNS");
+                    alertaSenha.setHeaderText("Vendedor Removido Com Sucesso!");
+                    alertaSenha.setContentText("CONGRATULATIONS!!!!");
+                    alertaSenha.showAndWait();
+                for (Iterator<Vendedor> iterator = Vendedores.iterator(); iterator.hasNext();) {
+                    Vendedor next = iterator.next();
+
+                    if (next.getCpf() == c.getCpf()) {
+                        iterator.remove();
+                    }
+                }
+            } else {
+                    Alert alertaSenha = new Alert(Alert.AlertType.ERROR);
+                    alertaSenha.setTitle("PARABÈNS");
+                    alertaSenha.setHeaderText("Vendedor Removido Com Sucesso!");
+                    alertaSenha.setContentText("CONGRATULATIONS!!!!");
+                    alertaSenha.showAndWait();
+            }
+        } else {
+                    Alert alertaSenha = new Alert(Alert.AlertType.WARNING);
+                    alertaSenha.setTitle("PARABÈNS");
+                    alertaSenha.setHeaderText("Vendedor Removido Com Sucesso!");
+                    alertaSenha.setContentText("CONGRATULATIONS!!!!");
+                    alertaSenha.showAndWait();
+        }
+    }
     }
     
 }

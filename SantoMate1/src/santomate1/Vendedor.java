@@ -12,25 +12,28 @@ import java.util.Date;
  * @author 05200251
  */
 public class Vendedor {
-    private int cpf;
+    private String cpf;
     private String nome;
     private Date idade;
     private int cep;
     private Float salario;
+    private int telefone;
+    
+    public Vendedor(){}
 
-    public Vendedor(int cpf, String nome, Date idade, int cep, Float salario, boolean ehGerente) {
+    public Vendedor(String cpf, String nome, Date idade, int tell, Float salario) {
         this.cpf = cpf;
         this.nome = nome;
         this.idade = idade;
-        this.cep = cep;
+        this.telefone = tell;
         this.salario = salario;
     }
     
-    public int getCpf() {
+    public String getCpf() {
         return cpf;
     }
 
-    public void setCpf(int cpf) {
+    public void setCpf(String cpf) {
         this.cpf = cpf;
     }
 
@@ -64,6 +67,14 @@ public class Vendedor {
 
     public void setSalario(Float salario) {
         this.salario = salario;
+    }
+    
+    public int getTelef() {
+        return telefone;
+    }
+
+    public void setTelef(int tell) {
+        this.telefone = tell;
     }
 
     @Override

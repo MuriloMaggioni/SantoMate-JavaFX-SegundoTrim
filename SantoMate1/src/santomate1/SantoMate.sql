@@ -10,11 +10,12 @@ preco float not null
 );
 
 create table vendedor(
-CPF int primary key,
+CPF varchar(11) primary key,
 nome varchar(50) not null,
 idade int not null, 
-CEP int not null,
-salario decimal not null
+CEP int,
+salario decimal not null,
+telefone int not null
 );
 
 create table estoque(
@@ -24,7 +25,7 @@ id_erva int not null references ervaMate(id)
 );
 
 create table comprador(
-CPF int primary key,
+CPF varchar(11) primary key,
 nome varchar(50) not null,
 CEP int,
 telefone int not null
@@ -32,8 +33,8 @@ telefone int not null
 
 create table venda(
 id_estoque int references estoque(id),
-vendedor_CPF int references vendedor(CPF),
-comprador_CPF int references comprador(CPF),
+vendedor_CPF varchar(11) references vendedor(CPF),
+comprador_CPF varchar(11) references comprador(CPF),
 id int primary key,
 quantidade int not null,
 tipo varchar(50) not null,

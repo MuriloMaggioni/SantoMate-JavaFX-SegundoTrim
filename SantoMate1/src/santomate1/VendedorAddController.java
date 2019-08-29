@@ -7,7 +7,7 @@ package santomate1;
 
 import java.io.IOException;
 import java.net.URL;
-import java.sql.SQLException;
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -44,14 +44,6 @@ public class VendedorAddController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }
-    public void txtAll(){
-        System.out.println(insertName.getText());
-        System.out.println(inserCPF.getText());
-        System.out.println(inserTel.getText());
-        System.out.println(inserSal.getText());
-        System.out.println(inserIdade.getText());
-        
-    }
 
     @FXML
     private void voltaMenu(ActionEvent event) {
@@ -74,31 +66,31 @@ public class VendedorAddController implements Initializable {
     @FXML
     private void addVendedor(ActionEvent event) throws IOException, Exception {
         boolean temp = true;
-        for(Vendedor vend : vendedores){
-            if (insertName.getText().equals(vend.getNome())) {
-                temp = false;
-                Alert dialogoInfo = new Alert(Alert.AlertType.ERROR);
-                dialogoInfo.setTitle("Falha no registro!");
-                dialogoInfo.setHeaderText("Nome ja Existente");
-                dialogoInfo.setContentText("Tente Novamente!");
-                dialogoInfo.showAndWait();
-                break;
-            }
-        }
-        if(temp){
-            Vendedor novovend = new Vendedor(inserCPF.getText(), insertName.getText(), inserIdade.getText(), inserTel.getText(), inserSal.getText());
-            registrarVendedor(novovend);
-            Parent proxTelaParent = FXMLLoader.load(getClass().getResource("GerenteMenu.fxml"));
-            Scene proxTelaScene = new Scene(proxTelaParent);
-            Stage tela = (Stage)((Node)event.getSource()).getScene().getWindow();
-            tela.setScene(proxTelaScene);
-            tela.show();    
-            Alert dialogoInfo = new Alert(Alert.AlertType.INFORMATION);
-            dialogoInfo.setTitle("Parabéns Gerente!");
-            dialogoInfo.setHeaderText("Vendedor Registrado com Sucesso!");
-            dialogoInfo.setContentText("Não atrase os salários em!");
-            dialogoInfo.showAndWait();
-        }
+        Vendedor vendedor = new Vendedor();
+
+                    vendedor.setCpf(inserCPF.getText());
+                    vendedor.setNome(insertName.getText());
+                    vendedor.setIdade(Date.valueOf(inserIdade.getText()));
+                    vendedor.setSalario(Float.parseFloat(inserSal.getText()));
+                    vendedor.setTelef(Integer.parseInt(inserTel.getText()));
+                    boolean ok = ComandosSQL.addVend(vendedor);
+
+                    if (ok) {
+                        vendedor.setCpf(String.valueOf(ComandosSQL.buscaCPFVend(vendedor)));
+                        vendedores.add(vendedor);
+                        Alert alertaSenha = new Alert(Alert.AlertType.INFORMATION);
+                        alertaSenha.setTitle("PARABÈNS!");
+                        alertaSenha.setHeaderText("Vendedor Cadastrado Com Sucesso!");
+                        alertaSenha.setContentText("");
+                        alertaSenha.showAndWait();
+                        limpaCamposInserção();
+                    } else {
+                        Alert alertaSenha = new Alert(Alert.AlertType.ERROR);
+                        alertaSenha.setTitle("OPS!");
+                        alertaSenha.setHeaderText("Erro ao Cadastrar Vendedor!");
+                        alertaSenha.setContentText("Tente Novamente!");
+                        alertaSenha.showAndWait();
+                    }
     }
 
     private void registrarVendedor(Vendedor vend) throws Exception {
@@ -108,4 +100,13 @@ public class VendedorAddController implements Initializable {
     private void setVendedores() throws Exception {
         vendedores = SantoMate1.conexaobd.vendedoresCarreg();
     }
+    
+        private void limpaCamposInserção() {
+        inserCPF.setText("");
+        insertName.setText("");
+        inserIdade.setText("");
+        inserSal.setText("");
+        inserTel.setText("");
+    }
+    
 }

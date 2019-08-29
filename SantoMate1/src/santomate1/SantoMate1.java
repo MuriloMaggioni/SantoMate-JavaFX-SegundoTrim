@@ -5,6 +5,7 @@
  */
 package santomate1;
 
+import java.util.ArrayList;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -17,6 +18,9 @@ import javafx.stage.Stage;
  * @author 05200251
  */
 public class SantoMate1 extends Application {
+    public ArrayList<Vendedor> vendedores;
+    public static ComandosSQL conexaobd = new ComandosSQL();
+    
     
     @Override
     public void start(Stage stage) throws Exception {

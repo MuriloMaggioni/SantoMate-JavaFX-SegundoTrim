@@ -57,7 +57,7 @@
                 <Font name="Arial" size="14.0" />
             </font>
         </TextField>
-        <TextField fx:id="inserCEP" alignment="CENTER" layoutX="408.0" layoutY="523.0" prefHeight="25.0" prefWidth="209.0" promptText="CEP">
+        <TextField fx:id="inserIdade" alignment="CENTER" layoutX="408.0" layoutY="523.0" prefHeight="25.0" prefWidth="209.0" promptText="IDADE">
             <font>
                 <Font name="Arial" size="14.0" />
             </font>

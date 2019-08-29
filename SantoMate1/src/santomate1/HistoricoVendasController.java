@@ -7,13 +7,7 @@ package santomate1;
 
 import java.io.IOException;
 import java.net.URL;
-import java.time.LocalDate;
-import java.time.Month;
-import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
-import javafx.beans.property.DoubleProperty;
-import javafx.beans.property.FloatProperty;
-import javafx.beans.property.IntegerProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -24,10 +18,8 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 /**
@@ -71,7 +63,7 @@ public class HistoricoVendasController implements Initializable {
         Marca.setCellValueFactory(cellData -> cellData.getValue().getMarca());
         Peso.setCellValueFactory(cellData -> cellData.getValue().getPeso().asString());
         Vendedor.setCellValueFactory(cellData -> cellData.getValue().getVendedorCPF());
-        Comprador.setCellValueFactory(cellData -> cellData.getValue().getCompradorNome());
+        Comprador.setCellValueFactory(cellData -> cellData.getValue().getCompradorCPF());
         
 
         // Add data to the table
