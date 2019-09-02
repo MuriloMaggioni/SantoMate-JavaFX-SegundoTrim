@@ -32,14 +32,9 @@ telefone int not null
 );
 
 create table venda(
-id_estoque int references estoque(id),
-vendedor_CPF varchar(11) references vendedor(CPF),
+id_erva int references ervaMate(id),
 comprador_CPF varchar(11) references comprador(CPF),
-id int primary key,
-quantidade int not null,
-tipo varchar(50) not null,
-peso float not null,
-marca varchar(50) not null
+id int primary key
 );
 
 insert into ErvaMate values (1, "Ximango", "Trandicional", 2.0, 18.00);
