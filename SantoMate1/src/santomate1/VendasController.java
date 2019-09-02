@@ -7,6 +7,8 @@ package santomate1;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -17,6 +19,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
@@ -29,96 +32,104 @@ import javafx.stage.Stage;
  */
 public class VendasController implements Initializable {
 
+    private Dao_Estoque dao_estoque;
+    private ObservableList<ErvaMate> ervas;
+    private ObservableList<Integer> quants;
+    private Dao_Comprador dao_comprador;
+    private ArrayList<Comprador> compradores;
+
     @FXML
     private Button comeback;
-    
     @FXML
-    private ComboBox<String> marca;
-    private ObservableList<String> myComboBoxMarca;
-    @FXML
-    private ComboBox<String> tipo;
-    private ObservableList<String> myComboBoxTipo;
-    @FXML
-    private ComboBox<String> vendedor;
-    private ObservableList<String> myComboBoxVendedor;
-    @FXML
-    private ComboBox<Integer> quant;
+    private ComboBox<Integer> cbxQuant;
     private ObservableList<Integer> myComboBoxQuant;
     @FXML
-    private ComboBox<Float> peso;
-    private ObservableList<Float> myComboBoxPeso;
-    @FXML
-    private TextField NameInput;
-    @FXML
-    private TextField CPFInput;
+    private ComboBox<ErvaMate> cbxErva;
+    private ObservableList<Float> myComboBoxErva;
     @FXML
     private Button venda;
+    @FXML
+    private TextField insertName;
+    @FXML
+    private TextField inserCPF;
+    @FXML
+    private TextField insertTelefone;
 
-    /**
-     * Initializes the controller class.
-     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        myComboBoxMarca = FXCollections.observableArrayList();
-        myComboBoxTipo = FXCollections.observableArrayList();
-        myComboBoxVendedor = FXCollections.observableArrayList();
-        myComboBoxQuant = FXCollections.observableArrayList();
-        myComboBoxPeso = FXCollections.observableArrayList();
-        
-        myComboBoxMarca.add("Ximango");
-        myComboBoxMarca.add("Rei Verde");
-        myComboBoxMarca.add("TerTúlia");
-        myComboBoxMarca.add("Vier");
-        myComboBoxMarca.add("Pastoreio");
-        
-        myComboBoxQuant.add(1);myComboBoxQuant.add(2);myComboBoxQuant.add(3);myComboBoxQuant.add(4);myComboBoxQuant.add(5);
-        
-        myComboBoxTipo.add("Trandicional");
-        myComboBoxTipo.add("Moída Grossa");
-        myComboBoxTipo.add("Pura Folha");
-        myComboBoxTipo.add("Barbaquá");
-        
-        myComboBoxPeso.add(new Float(1.0));
-        myComboBoxPeso.add(new Float(2.0));
-        myComboBoxPeso.add(new Float(4.0));
-        myComboBoxPeso.add(new Float(5.0));
-        myComboBoxPeso.add(new Float(6.0));
-        myComboBoxPeso.add(new Float(8.0));
-        
-        
-        marca.setItems(myComboBoxMarca);
-        quant.setItems(myComboBoxQuant);
-        tipo.setItems(myComboBoxTipo);
-        peso.setItems(myComboBoxPeso);
-    }   
+        compradores = new ArrayList();
+        dao_comprador = new Dao_Comprador();
+        dao_estoque = new Dao_Estoque();
+        ervas = FXCollections.observableArrayList();
+        quants = FXCollections.observableArrayList();
+        ervas.addAll(dao_estoque.PesquisaTodos());
+        cbxErva.setItems(ervas);
+        quants.add(1);
+        quants.add(2);
+        quants.add(3);
+        quants.add(4);
+        quants.add(5);
+
+        cbxQuant.setItems(quants);
+
+    }
 
     @FXML
     private void fechaPorra(ActionEvent event) {
-        Stage stage = (Stage)((Node) event.getSource()).getScene().getWindow();
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.close();
-        try{
+        try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("Menu.fxml"));
             Parent root = loader.load();
-            
+
             Scene scene = new Scene(root);
             Stage pt1 = new Stage();
             pt1.setScene(scene);
             pt1.show();
-        } catch (IOException ex){
+        } catch (IOException ex) {
             System.err.println("DEU PAULERA!");
             ex.printStackTrace();
         }
     }
 
     @FXML
-    private void insereNome(ActionEvent event) {
+    private void realizaVenda(ActionEvent event) throws SQLException, ClassNotFoundException {
+        if (!dao_estoque.removeEstoque(cbxErva.getSelectionModel().getSelectedItem(), cbxQuant.getSelectionModel().getSelectedItem())) {
+            Alert a = new Alert(Alert.AlertType.ERROR);
+            a.setTitle("Erro ao remover ERVA!");
+        } else {
+            Alert a = new Alert(Alert.AlertType.INFORMATION);
+            a.setTitle("ERA PRA FUNCIONAR 1!");
+        }
+        Comprador c = new Comprador();
+        c.setNome(insertName.getText());
+        c.setCpf(inserCPF.getText());
+        c.setTelefone(Integer.parseInt(insertTelefone.getText()));
+        boolean ok = dao_comprador.adiciona(c);
+
+        if (ok) {
+            c.setCpf(String.valueOf(dao_comprador.bucaCPFComprador(c)));
+            compradores.add(c);
+            Alert alertaSuscesso = new Alert(Alert.AlertType.INFORMATION);
+            alertaSuscesso.setTitle("PARABÈNS!");
+            alertaSuscesso.setHeaderText("Vendedor Realizou a Venda!");
+            alertaSuscesso.setContentText("");
+            alertaSuscesso.showAndWait();
+            limpaCamposInserção();
+        } else {
+            Alert alertaSuscesso = new Alert(Alert.AlertType.ERROR);
+            alertaSuscesso.setTitle("OPS!");
+            alertaSuscesso.setHeaderText("Erro ao Cadastrar Comprador!");
+            alertaSuscesso.setContentText("Tente Novamente!");
+            alertaSuscesso.showAndWait();
+            limpaCamposInserção();
+        }
     }
 
-    @FXML
-    private void insereCPF(ActionEvent event) {
-    }
-
-    @FXML
-    private void realizaVenda(ActionEvent event) {
+    private void limpaCamposInserção() {
+        inserCPF.setText("");
+        insertName.setText("");
+        insertTelefone.setText("");
     }
 }
+

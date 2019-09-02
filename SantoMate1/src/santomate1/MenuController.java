@@ -31,51 +31,51 @@ public class MenuController implements Initializable {
     private Button logVendedor;
     @FXML
     private Button close;
-    
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
-    
+    }
+
     @FXML
-    private void loginG (ActionEvent event){
-        Stage stage = (Stage)((Node) event.getSource()).getScene().getWindow();
+    private void loginG(ActionEvent event) {
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.close();
-        try{
+        try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("GerenteLogin.fxml"));
             Parent root = loader.load();
-            
+
             Scene scene = new Scene(root);
             Stage pt1 = new Stage();
             pt1.setScene(scene);
             pt1.show();
-        } catch (IOException ex){
+        } catch (IOException ex) {
             System.err.println("DEU PAULERA!");
             ex.printStackTrace();
         }
     }
-    
+
     @FXML
-    private void loginV (ActionEvent event){
-        Stage stage = (Stage)((Node) event.getSource()).getScene().getWindow();
+    private void loginV(ActionEvent event) {
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.close();
-        try{
+        try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("Vendas.fxml"));
             Parent root = loader.load();
-            
+
             Scene scene = new Scene(root);
             Stage pt1 = new Stage();
             pt1.setScene(scene);
             pt1.show();
-        } catch (IOException ex){
+        } catch (IOException ex) {
             System.err.println("DEU PAULERA!");
             ex.printStackTrace();
         }
     }
-    
+
     @FXML
-    private void fechaEssaMerda (ActionEvent event){
-        Stage stage = (Stage)((Node) event.getSource()).getScene().getWindow();
+    private void fechaEssaMerda(ActionEvent event) {
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.close();
     }
 }

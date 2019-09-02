@@ -19,9 +19,9 @@ telefone int not null
 );
 
 create table estoque(
-id int primary key,
 quant int not null,
-id_erva int not null references ervaMate(id)
+id_erva int references ervaMate(id),
+primary key(id_erva)
 );
 
 create table comprador(

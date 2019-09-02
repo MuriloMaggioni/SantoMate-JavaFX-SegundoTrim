@@ -5,10 +5,15 @@
  */
 package santomate1;
 
+import java.util.List;
+
 /**
  *
- * @author 05200251
+ * @author Murilo
  */
-public class Estoque {
+public interface DaoC<E> {
     
+    public boolean adiciona(E m);
+    
+    public List<E> pesquisaTodos();
 }

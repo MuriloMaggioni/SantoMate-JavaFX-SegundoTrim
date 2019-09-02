@@ -15,6 +15,7 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 public class Venda {
+
     private IntegerProperty estoqueID;
     private final StringProperty vendedorCPF;
     private final StringProperty compradorCPF;
@@ -41,8 +42,6 @@ public class Venda {
         this.vendedorCPF = new SimpleStringProperty(vendedorCPF);
         this.compradorCPF = new SimpleStringProperty(compradorCPF);
     }
-    
-    
 
     public IntegerProperty getEstoqueID() {
         return estoqueID;
@@ -102,8 +101,8 @@ public class Venda {
 
     @Override
     public String toString() {
-        return "Venda{" + "estoqueID=" + estoqueID + 
-                ", vendedorCPF=" + vendedorCPF + ", compradorCPF=" + compradorCPF + ", quant=" + quant + 
-                ", tipo=" + tipo + ", peso=" + peso + ", marca=" + marca + '}';
-    }    
+        return "Venda{" + "estoqueID=" + estoqueID
+                + ", vendedorCPF=" + vendedorCPF + ", compradorCPF=" + compradorCPF + ", quant=" + quant
+                + ", tipo=" + tipo + ", peso=" + peso + ", marca=" + marca + '}';
+    }
 }

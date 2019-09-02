@@ -52,7 +52,7 @@
                 <Cursor fx:constant="DEFAULT" />
             </cursor>
         </ComboBox>
-        <Button fx:id="add" layoutX="431.0" layoutY="471.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="165.0" text="Adicionar">
+        <Button fx:id="add" layoutX="431.0" layoutY="471.0" mnemonicParsing="false" onAction="#addEstoque" prefHeight="34.0" prefWidth="165.0" text="Adicionar">
             <font>
                 <Font size="14.0" />
             </font>

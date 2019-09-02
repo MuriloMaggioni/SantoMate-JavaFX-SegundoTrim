@@ -18,13 +18,16 @@ import javafx.beans.property.StringProperty;
  * @author 05200251
  */
 class ErvaMate {
+
     private Integer id;
     private String marca;
     private String tipo;
     private Float peso;
     private Float preco;
-    
-    public ErvaMate(){}
+    private int quantEstoque;
+
+    public ErvaMate() {
+    }
 
     public ErvaMate(Integer id, String marca, String tipo, Float peso, Float preco) {
         this.id = id;
@@ -74,13 +77,17 @@ class ErvaMate {
         this.preco = preco;
     }
 
+    public int getQuantEstoque() {
+        return quantEstoque;
+    }
+
+    public void setQuantEstoque(int quantEstoque) {
+        this.quantEstoque = quantEstoque;
+    }
+
     @Override
     public String toString() {
-        return "Marca: " +marca+ "Tipo: " +tipo+ "Peso: " +peso;
+        return "Marca: " + marca + "Tipo: " + tipo + "Peso: " + peso;
     }
-    
-    
-    
-    
-    
+
 }

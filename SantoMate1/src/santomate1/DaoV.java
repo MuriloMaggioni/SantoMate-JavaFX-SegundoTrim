@@ -11,15 +11,14 @@ import java.util.List;
  *
  * @author Murilo
  */
-    public interface DaoV<E> {
+public interface DaoV<E> {
 
     public boolean adiciona(E m);
 
     public boolean remove(E m);
 
     public boolean pesquisa(E m);
-    
+
     public List<E> pesquisaTodos();
 
 }
-

@@ -18,7 +18,7 @@ public class Dao_Vendedor implements DaoV<Vendedor> {
 
     @Override
     public boolean adiciona(Vendedor vend) {
-        Connection con = conectBD.getConn();
+        Connection con = ConectBD.getConn();
         String sql = "INSERT INTO vendedor (CPF, nome, idade, salario, telefone) VALUES (?,?,?,?,?)";
         PreparedStatement stmt = null;
         try {
@@ -29,7 +29,7 @@ public class Dao_Vendedor implements DaoV<Vendedor> {
             stmt.setFloat(4, vend.getSalario());
             stmt.setInt(5, vend.getTelef());
             stmt.executeUpdate();
-            conectBD.closeConn(con, stmt);
+            ConectBD.closeConn(con, stmt);
         } catch (SQLException ex) {
             System.err.println("Erro " + ex);
             ex.printStackTrace();
@@ -41,7 +41,7 @@ public class Dao_Vendedor implements DaoV<Vendedor> {
     @Override
     public boolean remove(Vendedor contato) {
         try {
-            try (Connection connection = conectBD.getConn();
+            try (Connection connection = ConectBD.getConn();
                     PreparedStatement stmt = connection.prepareStatement("delete from Vendedor where CPF=?")) {
                 stmt.setString(1, (contato.getCpf()));
                 stmt.execute();
@@ -69,7 +69,7 @@ public class Dao_Vendedor implements DaoV<Vendedor> {
     public List<Vendedor> pesquisaTodos() {
         List<Vendedor> contatos = new ArrayList();
         try {
-            try (Connection connection = conectBD.getConn();
+            try (Connection connection = ConectBD.getConn();
                     PreparedStatement stmt = connection.prepareStatement("select * from vendedor");
                     ResultSet rs = stmt.executeQuery()) {
                 while (rs.next()) {

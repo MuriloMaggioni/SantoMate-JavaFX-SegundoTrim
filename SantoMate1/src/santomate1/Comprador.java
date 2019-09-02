@@ -12,23 +12,32 @@ import java.util.Date;
  * @author 05200251
  */
 public class Comprador {
-    private int cpf;
-    private String nome;
-    private Date idade;
-    private int cep;
 
-    public Comprador(int cpf, String nome, Date idade, int cep) {
+    private String cpf;
+    private String nome;
+    private int telefone;
+    private int cep;
+    
+    public Comprador(){}
+
+    public Comprador(String cpf, String nome, int telefone) {
         this.cpf = cpf;
         this.nome = nome;
-        this.idade = idade;
+        this.telefone = telefone;
+    }
+
+    public Comprador(String cpf, String nome, int idade, int cep) {
+        this.cpf = cpf;
+        this.nome = nome;
+        this.telefone = idade;
         this.cep = cep;
     }
 
-    public int getCpf() {
+    public String getCpf() {
         return cpf;
     }
 
-    public void setCpf(int cpf) {
+    public void setCpf(String cpf) {
         this.cpf = cpf;
     }
 
@@ -40,12 +49,12 @@ public class Comprador {
         this.nome = nome;
     }
 
-    public Date getIdade() {
-        return idade;
+    public int getTelefone() {
+        return telefone;
     }
 
-    public void setIdade(Date idade) {
-        this.idade = idade;
+    public void setTelefone(int idade) {
+        this.telefone = idade;
     }
 
     public int getCep() {
@@ -58,11 +67,8 @@ public class Comprador {
 
     @Override
     public String toString() {
-        return "Comprador{" + "cpf=" + cpf + ", nome=" 
-                + nome + ", idade=" + idade + ", cep=" + cep + '}';
+        return "Comprador{" + "cpf=" + cpf + ", nome="
+                + nome + ", idade=" + telefone + ", cep=" + cep + '}';
     }
-    
-    
-    
-    
+
 }

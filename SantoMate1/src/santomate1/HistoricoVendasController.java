@@ -45,15 +45,15 @@ public class HistoricoVendasController implements Initializable {
     private Button voltar;
     @FXML
     private TableView<Venda> vendasTable;
-    
+
     private final ObservableList<Venda> historico = FXCollections.observableArrayList();
-    
-    public HistoricoVendasController(){
+
+    public HistoricoVendasController() {
         historico.add(new Venda(8, "Moída Grossa", "Ximango", 4.0, "03848937085", "Pedro José de Antilha"));
         historico.add(new Venda(18, "Pura Folha", "Rei Verde", 6.0, "27764598308", "Roberto Feliz da Silva"));
-        
+
     }
-    
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         vendasTable.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
@@ -64,7 +64,6 @@ public class HistoricoVendasController implements Initializable {
         Peso.setCellValueFactory(cellData -> cellData.getValue().getPeso().asString());
         Vendedor.setCellValueFactory(cellData -> cellData.getValue().getVendedorCPF());
         Comprador.setCellValueFactory(cellData -> cellData.getValue().getCompradorCPF());
-        
 
         // Add data to the table
         vendasTable.setItems(historico);
@@ -72,20 +71,20 @@ public class HistoricoVendasController implements Initializable {
 
     @FXML
     private void voltaMerda(ActionEvent event) {
-        Stage stage = (Stage)((Node) event.getSource()).getScene().getWindow();
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.close();
-        try{
+        try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("GerenteMenu.fxml"));
             Parent root = loader.load();
-            
+
             Scene scene = new Scene(root);
             Stage pt1 = new Stage();
             pt1.setScene(scene);
             pt1.show();
-        } catch (IOException ex){
+        } catch (IOException ex) {
             System.err.println("DEU PAULERA!");
             ex.printStackTrace();
         }
     }
-    
+
 }

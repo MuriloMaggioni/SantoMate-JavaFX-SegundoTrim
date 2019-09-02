@@ -32,19 +32,17 @@
             <Image url="@imagens/whiteimage2.jpg" />
          </image>
       </ImageView>
-      <ComboBox fx:id="marca" layoutX="438.0" layoutY="35.0" prefWidth="150.0" promptText="Marca" />
-      <ComboBox fx:id="tipo" layoutX="438.0" layoutY="186.0" prefWidth="150.0" promptText="Tipo" />
-      <ComboBox fx:id="vendedor" layoutX="438.0" layoutY="236.0" prefWidth="150.0" promptText="Vendedor" />
-      <ComboBox fx:id="quant" layoutX="437.0" layoutY="135.0" prefWidth="150.0" promptText="Quantidade" />
-      <ComboBox fx:id="peso" layoutX="438.0" layoutY="84.0" prefWidth="150.0" promptText="Peso" />
-      <Text fontSmoothingType="LCD" layoutX="389.0" layoutY="320.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DADOS DO COMPRADOR">
+      <ComboBox fx:id="cbxErva" layoutX="436.0" layoutY="148.0" prefWidth="150.0" promptText="Erva" />
+      <ComboBox fx:id="cbxQuant" layoutX="437.0" layoutY="94.0" prefWidth="150.0" promptText="Quantidade" />
+      <Text fontSmoothingType="LCD" layoutX="389.0" layoutY="231.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DADOS DO COMPRADOR">
          <font>
             <Font name="Arial" size="20.0" />
          </font>
       </Text>
-      <TextField fx:id="NameInput" alignment="CENTER" layoutX="369.0" layoutY="347.0" onAction="#insereNome" prefHeight="25.0" prefWidth="286.0" promptText="NOME" />
-      <TextField fx:id="CPFInput" alignment="CENTER" layoutX="369.0" layoutY="395.0" onAction="#insereCPF" prefHeight="25.0" prefWidth="286.0" promptText="CPF" />
+      <TextField fx:id="insertName" alignment="CENTER" layoutX="368.0" layoutY="266.0" prefHeight="25.0" prefWidth="286.0" promptText="NOME" />
+      <TextField fx:id="inserCPF" alignment="CENTER" layoutX="368.0" layoutY="313.0" prefHeight="25.0" prefWidth="286.0" promptText="CPF" />
       <Button fx:id="comeback" alignment="CENTER" contentDisplay="CENTER" layoutX="487.0" layoutY="637.0" mnemonicParsing="false" onAction="#fechaPorra" text="Voltar" textAlignment="CENTER" />
-      <Button fx:id="venda" layoutX="462.0" layoutY="451.0" mnemonicParsing="false" onAction="#realizaVenda" text="Finalizar venda" />
+      <Button fx:id="venda" layoutX="464.0" layoutY="401.0" mnemonicParsing="false" onAction="#realizaVenda" text="Finalizar venda" />
+      <TextField fx:id="insertTelefone" alignment="CENTER" layoutX="368.0" layoutY="356.0" prefHeight="25.0" prefWidth="286.0" promptText="TELEFONE" />
    </children>
 </AnchorPane>

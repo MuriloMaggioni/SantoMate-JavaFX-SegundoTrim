@@ -13,14 +13,16 @@ import java.util.List;
  * @author 05200251
  */
 public class Vendedor {
+
     private String cpf;
     private String nome;
     private int idade;
     private int cep;
     private Float salario;
     private int telefone;
-    
-    public Vendedor(){}
+
+    public Vendedor() {
+    }
 
     public Vendedor(String cpf, String nome, int idade, int tell, Float salario) {
         this.cpf = cpf;
@@ -29,7 +31,7 @@ public class Vendedor {
         this.telefone = tell;
         this.salario = salario;
     }
-    
+
     public String getCpf() {
         return cpf;
     }
@@ -69,7 +71,7 @@ public class Vendedor {
     public void setSalario(Float salario) {
         this.salario = salario;
     }
-    
+
     public int getTelef() {
         return telefone;
     }
@@ -82,5 +84,5 @@ public class Vendedor {
     public String toString() {
         return "Nome: " + nome + "\nCPF: " + cpf + "!";
     }
- 
+
 }

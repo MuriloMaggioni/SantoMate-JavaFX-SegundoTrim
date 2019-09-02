@@ -40,37 +40,36 @@ public class GerenteLoginController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         int senhaGerente = 1235;
-        
-    }    
+
+    }
 
     @FXML
     private void voltaMenu(ActionEvent event) {
-        Stage stage = (Stage)((Node) event.getSource()).getScene().getWindow();
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.close();
-        try{
+        try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("Menu.fxml"));
             Parent root = loader.load();
-            
+
             Scene scene = new Scene(root);
-            Stage pt1 = new Stage();            
+            Stage pt1 = new Stage();
             pt1.setScene(scene);
             pt1.show();
-        } catch (IOException ex){
+        } catch (IOException ex) {
             System.err.println("DEU PAULERA!");
             ex.printStackTrace();
         }
     }
-    
-    
+
     //NÂO FUNCIONA A SENHA, SÓ REDIRICIONA!!!!!!!!!!!!!!!!!!!!!!!
     @FXML
     private void insereSenha(ActionEvent event) {
         String senhaInser = insert.getText();
         String senhaGerente = "123";
-        if(senhaInser.equals(senhaGerente)){
-            Stage stage = (Stage)((Node) event.getSource()).getScene().getWindow();
+        if (senhaInser.equals(senhaGerente)) {
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.close();
-            try{
+            try {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("GerenteMenu.fxml"));
                 Parent root = loader.load();
 
@@ -78,18 +77,18 @@ public class GerenteLoginController implements Initializable {
                 Stage pt1 = new Stage();
                 pt1.setScene(scene);
                 pt1.show();
-            } catch (IOException ex){
+            } catch (IOException ex) {
                 System.err.println("DEU PAULERA!");
                 ex.printStackTrace();
             }
-        }else{
+        } else {
             Alert alertaSenha = new Alert(Alert.AlertType.WARNING);
             alertaSenha.setTitle("Erro 404");
             alertaSenha.setHeaderText("Senha Incorreta");
             alertaSenha.setContentText("Tente Novamente");
             alertaSenha.showAndWait();
         }
-        
+
     }
 
 }
