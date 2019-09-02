@@ -6,6 +6,7 @@
 package santomate1;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  *
@@ -14,14 +15,14 @@ import java.util.Date;
 public class Vendedor {
     private String cpf;
     private String nome;
-    private Date idade;
+    private int idade;
     private int cep;
     private Float salario;
     private int telefone;
     
     public Vendedor(){}
 
-    public Vendedor(String cpf, String nome, Date idade, int tell, Float salario) {
+    public Vendedor(String cpf, String nome, int idade, int tell, Float salario) {
         this.cpf = cpf;
         this.nome = nome;
         this.idade = idade;
@@ -45,11 +46,11 @@ public class Vendedor {
         this.nome = nome;
     }
 
-    public Date getIdade() {
+    public int getIdade() {
         return idade;
     }
 
-    public void setIdade(Date idade) {
+    public void setIdade(int idade) {
         this.idade = idade;
     }
 
@@ -79,7 +80,7 @@ public class Vendedor {
 
     @Override
     public String toString() {
-        return "Venda{" + "cpf=" + cpf + ", nome=" + nome +
-                ", idade=" + idade + ", cep=" + cep + ", ehGerente=" + '}';
+        return "Nome: " + nome + "\nCPF: " + cpf + "!";
     }
+ 
 }

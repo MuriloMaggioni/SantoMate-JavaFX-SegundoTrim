@@ -37,35 +37,25 @@
                 <Image url="@imagens/SANTO_MATE.png" />
             </image>
         </ImageView>
-        <Button fx:id="voltar" layoutX="480.0" layoutY="624.0" mnemonicParsing="false" onAction="#voltaMenu" text="Voltar">
+        <Button fx:id="Voltar" layoutX="480.0" layoutY="624.0" mnemonicParsing="false" onAction="#voltaMenu" text="Voltar">
             <font>
                 <Font size="14.0" />
             </font>
         </Button>
-        <ComboBox fx:id="marca" layoutX="392.0" layoutY="363.0" prefHeight="34.0" prefWidth="241.0" promptText="Marca">
+        <ComboBox fx:id="cbxErva" layoutX="392.0" layoutY="363.0" prefHeight="34.0" prefWidth="241.0" promptText="Erva">
             <cursor>
                 <Cursor fx:constant="DEFAULT" />
             </cursor>
         </ComboBox>
-        <ComboBox fx:id="quant" layoutX="392.0" layoutY="518.0" prefHeight="34.0" prefWidth="241.0" promptText="Quantidade">
+        <ComboBox fx:id="cbxQuant" layoutX="390.0" layoutY="414.0" prefHeight="34.0" prefWidth="241.0" promptText="Quantidade">
             <cursor>
                 <Cursor fx:constant="DEFAULT" />
             </cursor>
         </ComboBox>
-        <ComboBox fx:id="tipo" layoutX="392.0" layoutY="416.0" prefHeight="34.0" prefWidth="241.0" promptText="Tipo">
-            <cursor>
-                <Cursor fx:constant="DEFAULT" />
-            </cursor>
-        </ComboBox>
-        <Button fx:id="add" layoutX="430.0" layoutY="567.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="165.0" text="Adicionar">
+        <Button fx:id="add" layoutX="431.0" layoutY="471.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="165.0" text="Adicionar">
             <font>
                 <Font size="14.0" />
             </font>
         </Button>
-        <ComboBox fx:id="peso" layoutX="392.0" layoutY="468.0" prefHeight="34.0" prefWidth="241.0" promptText="Peso">
-            <cursor>
-                <Cursor fx:constant="DEFAULT" />
-            </cursor>
-        </ComboBox>
     </children>
 </AnchorPane>

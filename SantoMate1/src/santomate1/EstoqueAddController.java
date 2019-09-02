@@ -7,6 +7,7 @@ package santomate1;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -27,54 +28,34 @@ import javafx.stage.Stage;
  * @author 05200251
  */
 public class EstoqueAddController implements Initializable {
+    private Dao_Estoque dao_estoque;
+    private ObservableList<ErvaMate> ervas;
+    private ObservableList<Integer> quants;
 
-    @FXML
-    private Button voltar;
     @FXML
     private Button add;
     
     @FXML
-    private ComboBox<String> marca;
-    private final ObservableList<String> myComboBoxMarca = FXCollections.observableArrayList();
+    private ComboBox<ErvaMate> cbxErva;
+    private ObservableList<String> myComboBoxErva;
     
     @FXML
-    private ComboBox<Integer> quant;
-    private final ObservableList<Integer> myComboBoxQuant = FXCollections.observableArrayList();
+    private ComboBox<Integer> cbxQuant;
+    private ObservableList<Integer> myComboBoxQuant;
     
     @FXML
-    private ComboBox<String> tipo;
-    private final ObservableList<String> myComboBoxTipo = FXCollections.observableArrayList();
-    
-    @FXML
-    private ComboBox<Float> peso;
-    private final ObservableList<Float> myComboBoxPeso = FXCollections.observableArrayList();
+    private Button Voltar;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        myComboBoxMarca.add("Ximango");
-        myComboBoxMarca.add("Rei Verde");
-        myComboBoxMarca.add("TerTúlia");
-        myComboBoxMarca.add("Vier");
-        myComboBoxMarca.add("Pastoreio");
-        
-        myComboBoxQuant.add(1);myComboBoxQuant.add(2);myComboBoxQuant.add(3);myComboBoxQuant.add(4);myComboBoxQuant.add(5);
-        
-        myComboBoxTipo.add("Trandicional");
-        myComboBoxTipo.add("Moída Grossa");
-        myComboBoxTipo.add("Pura Folha");
-        myComboBoxTipo.add("Barbaquá");
-        
-        myComboBoxPeso.add(new Float(1.0));
-        myComboBoxPeso.add(new Float(2.0));
-        myComboBoxPeso.add(new Float(4.0));
-        myComboBoxPeso.add(new Float(5.0));
-        myComboBoxPeso.add(new Float(6.0));
-        myComboBoxPeso.add(new Float(8.0));
-        
-        marca.setItems(myComboBoxMarca);
-        quant.setItems(myComboBoxQuant);
-        tipo.setItems(myComboBoxTipo);
-        peso.setItems(myComboBoxPeso);
+        dao_estoque = new Dao_Estoque();
+        ervas = FXCollections.observableArrayList();
+        quants = FXCollections.observableArrayList();
+        ervas.addAll(dao_estoque.PesquisaTodos());
+        cbxErva.setItems(ervas);
+        quants.add(1);quants.add(2);quants.add(3);quants.add(4);quants.add(5);
+
+        cbxQuant.setItems(quants);
     }    
     
     @FXML
@@ -94,4 +75,10 @@ public class EstoqueAddController implements Initializable {
             ex.printStackTrace();
         }
     }
+    
+    public void inserirEstoque(ActionEvent event){
+        
+    }
+    
+    
 }

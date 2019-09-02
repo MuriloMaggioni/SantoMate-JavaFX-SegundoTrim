@@ -7,7 +7,9 @@ package santomate1;
 
 import java.util.Objects;
 import javafx.beans.property.FloatProperty;
+import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleFloatProperty;
+import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
@@ -16,63 +18,69 @@ import javafx.beans.property.StringProperty;
  * @author 05200251
  */
 class ErvaMate {
-    private final StringProperty marca;
-    private final StringProperty tipo;
-    private final FloatProperty peso;
+    private Integer id;
+    private String marca;
+    private String tipo;
+    private Float peso;
+    private Float preco;
+    
+    public ErvaMate(){}
 
-    public ErvaMate(String marca, String tipo, float peso) {
-        this.marca = new SimpleStringProperty(marca);
-        this.tipo = new SimpleStringProperty(tipo);
-        this.peso = new SimpleFloatProperty(peso);
+    public ErvaMate(Integer id, String marca, String tipo, Float peso, Float preco) {
+        this.id = id;
+        this.marca = marca;
+        this.tipo = tipo;
+        this.peso = peso;
+        this.preco = preco;
     }
 
-    public StringProperty getMarca() {
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getMarca() {
         return marca;
     }
 
     public void setMarca(String marca) {
-        this.marca.set(marca);
+        this.marca = marca;
     }
 
-    public StringProperty getTipo() {
+    public String getTipo() {
         return tipo;
     }
 
     public void setTipo(String tipo) {
-        this.tipo.set(tipo);
+        this.tipo = tipo;
     }
 
-    public FloatProperty getPeso() {
+    public Float getPeso() {
         return peso;
     }
 
-    public void setPeso(float peso) {
-        this.peso.set(peso);
+    public void setPeso(Float peso) {
+        this.peso = peso;
+    }
+
+    public Float getPreco() {
+        return preco;
+    }
+
+    public void setPreco(Float preco) {
+        this.preco = preco;
     }
 
     @Override
-    public int hashCode() {
-        int hash = 5;
-        hash = 67 * hash + Objects.hashCode(this.marca);
-        hash = 67 * hash + Objects.hashCode(this.tipo);
-        hash = 67 * hash + Float.floatToIntBits(this.peso.get());
-        return hash;
+    public String toString() {
+        return "Marca: " +marca+ "Tipo: " +tipo+ "Peso: " +peso;
     }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final ErvaMate other = (ErvaMate) obj;
-        return true;
-    }
+    
+    
+    
     
     
 }

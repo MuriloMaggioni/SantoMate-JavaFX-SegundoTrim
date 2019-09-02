@@ -23,6 +23,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 public class VendedorAddController implements Initializable {
+    private Dao_Vendedor dao_vendedor;
 
     @FXML
     private TextField insertName;
@@ -42,7 +43,8 @@ public class VendedorAddController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        dao_vendedor = new Dao_Vendedor();
+        vendedores = new ArrayList();
     }
 
     @FXML
@@ -70,32 +72,29 @@ public class VendedorAddController implements Initializable {
 
                     vendedor.setCpf(inserCPF.getText());
                     vendedor.setNome(insertName.getText());
-                    vendedor.setIdade(Date.valueOf(inserIdade.getText()));
+                    vendedor.setIdade(Integer.parseInt(inserIdade.getText()));
                     vendedor.setSalario(Float.parseFloat(inserSal.getText()));
                     vendedor.setTelef(Integer.parseInt(inserTel.getText()));
-                    boolean ok = ComandosSQL.addVend(vendedor);
+                    boolean ok = dao_vendedor.adiciona(vendedor);
 
                     if (ok) {
-                        vendedor.setCpf(String.valueOf(ComandosSQL.buscaCPFVend(vendedor)));
+                        vendedor.setCpf(String.valueOf(dao_vendedor.bucaCPFVend(vendedor)));
                         vendedores.add(vendedor);
-                        Alert alertaSenha = new Alert(Alert.AlertType.INFORMATION);
-                        alertaSenha.setTitle("PARABÈNS!");
-                        alertaSenha.setHeaderText("Vendedor Cadastrado Com Sucesso!");
-                        alertaSenha.setContentText("");
-                        alertaSenha.showAndWait();
+                        Alert alertaSuscesso = new Alert(Alert.AlertType.INFORMATION);
+                        alertaSuscesso.setTitle("PARABÈNS!");
+                        alertaSuscesso.setHeaderText("Vendedor Cadastrado Com Sucesso!");
+                        alertaSuscesso.setContentText("");
+                        alertaSuscesso.showAndWait();
                         limpaCamposInserção();
                     } else {
-                        Alert alertaSenha = new Alert(Alert.AlertType.ERROR);
-                        alertaSenha.setTitle("OPS!");
-                        alertaSenha.setHeaderText("Erro ao Cadastrar Vendedor!");
-                        alertaSenha.setContentText("Tente Novamente!");
-                        alertaSenha.showAndWait();
+                        Alert alertaSuscesso = new Alert(Alert.AlertType.ERROR);
+                        alertaSuscesso.setTitle("OPS!");
+                        alertaSuscesso.setHeaderText("Erro ao Cadastrar Vendedor!");
+                        alertaSuscesso.setContentText("Tente Novamente!");
+                        alertaSuscesso.showAndWait();
+                        limpaCamposInserção();
                     }
-    }
-
-    private void registrarVendedor(Vendedor vend) throws Exception {
-        SantoMate1.conexaobd.addVend(vend);
-    }
+        }
     
     private void setVendedores() throws Exception {
         vendedores = SantoMate1.conexaobd.vendedoresCarreg();

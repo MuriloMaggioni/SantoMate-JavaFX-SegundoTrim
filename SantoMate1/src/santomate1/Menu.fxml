@@ -17,8 +17,7 @@
     <children>
         <ImageView fitHeight="768.0" fitWidth="1024.0" layoutY="-1.0" opacity="0.75" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@imagens/erva-mate-chimarrao.jpg" />
-            </image>
+                <Image url="@imagens/erva-mate-chimarrao.jpg" /></image>
             <effect>
                 <Lighting bumpInput="$null" diffuseConstant="2.0" specularConstant="0.0" specularExponent="0.0" surfaceScale="10.0">
                     <light>

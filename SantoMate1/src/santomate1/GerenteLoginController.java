@@ -66,7 +66,7 @@ public class GerenteLoginController implements Initializable {
     @FXML
     private void insereSenha(ActionEvent event) {
         String senhaInser = insert.getText();
-        String senhaGerente = "SantoMate1235";
+        String senhaGerente = "123";
         if(senhaInser.equals(senhaGerente)){
             Stage stage = (Stage)((Node) event.getSource()).getScene().getWindow();
             stage.close();

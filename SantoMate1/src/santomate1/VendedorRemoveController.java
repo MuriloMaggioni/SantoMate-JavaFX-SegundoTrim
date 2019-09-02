@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.Iterator;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -28,6 +29,7 @@ import javafx.stage.Stage;
  * @author 05200251
  */
 public class VendedorRemoveController implements Initializable {
+    private Dao_Vendedor dao_vendedor;
     private ObservableList<Vendedor> Vendedores;
     
 
@@ -36,14 +38,19 @@ public class VendedorRemoveController implements Initializable {
     @FXML
     private Button Remove;
     @FXML
-    private ComboBox<?> Vendedor;
+    private ComboBox<Vendedor> cbxVendedor;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        dao_vendedor = new Dao_Vendedor();
+        Vendedores = FXCollections.observableArrayList();
+        Vendedores.addAll(dao_vendedor.pesquisaTodos());
+        cbxVendedor.setItems(Vendedores);
+        
+        
     }    
 
     @FXML
@@ -64,18 +71,19 @@ public class VendedorRemoveController implements Initializable {
         }
     }
 
+
     @FXML
     private void demitidoOMerda(ActionEvent event) {
-        if (Vendedor.getSelectionModel().getSelectedItem() != null) {
+        if (cbxVendedor.getSelectionModel().getSelectedItem() != null) {
 
-            Vendedor c = ComandosSQL.buscaCPFVend(Vendedor.getSelectionModel().getSelectedItem().getNome());
+            Vendedor c = dao_vendedor.pesquisaVend((String) cbxVendedor.getSelectionModel().getSelectedItem().getNome());
 
-            if (c != null && ComandosSQL.remove(c)) {
-                    Alert alertaSenha = new Alert(Alert.AlertType.INFORMATION);
-                    alertaSenha.setTitle("PARABÈNS");
-                    alertaSenha.setHeaderText("Vendedor Removido Com Sucesso!");
-                    alertaSenha.setContentText("CONGRATULATIONS!!!!");
-                    alertaSenha.showAndWait();
+            if (c != null && dao_vendedor.remove(c)) {
+                Alert alertaSuscesso = new Alert(Alert.AlertType.INFORMATION);
+                        alertaSuscesso.setTitle("PARABÉNS!");
+                        alertaSuscesso.setHeaderText("Vendedor REMOVIDO com sucesso");
+                        alertaSuscesso.setContentText("SHOW DE BOLA!");
+                        alertaSuscesso.showAndWait();
                 for (Iterator<Vendedor> iterator = Vendedores.iterator(); iterator.hasNext();) {
                     Vendedor next = iterator.next();
 
@@ -84,20 +92,19 @@ public class VendedorRemoveController implements Initializable {
                     }
                 }
             } else {
-                    Alert alertaSenha = new Alert(Alert.AlertType.ERROR);
-                    alertaSenha.setTitle("PARABÈNS");
-                    alertaSenha.setHeaderText("Vendedor Removido Com Sucesso!");
-                    alertaSenha.setContentText("CONGRATULATIONS!!!!");
-                    alertaSenha.showAndWait();
+                Alert alertaSuscesso = new Alert(Alert.AlertType.ERROR);
+                        alertaSuscesso.setTitle("OPS!");
+                        alertaSuscesso.setHeaderText("Erro durante a remoção do" + c.getNome());
+                        alertaSuscesso.setContentText("Tente Novamente!");
+                        alertaSuscesso.showAndWait();
+
             }
         } else {
-                    Alert alertaSenha = new Alert(Alert.AlertType.WARNING);
-                    alertaSenha.setTitle("PARABÈNS");
-                    alertaSenha.setHeaderText("Vendedor Removido Com Sucesso!");
-                    alertaSenha.setContentText("CONGRATULATIONS!!!!");
-                    alertaSenha.showAndWait();
+            Alert alertaSuscesso = new Alert(Alert.AlertType.WARNING);
+                        alertaSuscesso.setTitle("OPS!");
+                        alertaSuscesso.setHeaderText("Você deve escolher um professor!");
+                        alertaSuscesso.setContentText("Tente Novamente!");
+                        alertaSuscesso.showAndWait();
         }
     }
-    }
-    
 }
