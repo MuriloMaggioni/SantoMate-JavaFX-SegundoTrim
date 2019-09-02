@@ -119,10 +119,11 @@ public class VendasController implements Initializable {
         } else {
             Alert alertaSuscesso = new Alert(Alert.AlertType.ERROR);
             alertaSuscesso.setTitle("OPS!");
-            alertaSuscesso.setHeaderText("Erro ao Cadastrar Comprador!");
+            alertaSuscesso.setHeaderText("Erro ao Realizar Venda!");
             alertaSuscesso.setContentText("Tente Novamente!");
             alertaSuscesso.showAndWait();
             limpaCamposInserção();
+
         }
     }
 
@@ -132,4 +133,3 @@ public class VendasController implements Initializable {
         insertTelefone.setText("");
     }
 }
-

@@ -49,24 +49,12 @@ public class HistoricoVendasController implements Initializable {
     private final ObservableList<Venda> historico = FXCollections.observableArrayList();
 
     public HistoricoVendasController() {
-        historico.add(new Venda(8, "Moída Grossa", "Ximango", 4.0, "03848937085", "Pedro José de Antilha"));
-        historico.add(new Venda(18, "Pura Folha", "Rei Verde", 6.0, "27764598308", "Roberto Feliz da Silva"));
 
     }
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        vendasTable.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
-        // Initialize the columns.
-        Quantidade.setCellValueFactory(cellData -> cellData.getValue().getQuant().asString());
-        Tipo.setCellValueFactory(cellData -> cellData.getValue().getTipo());
-        Marca.setCellValueFactory(cellData -> cellData.getValue().getMarca());
-        Peso.setCellValueFactory(cellData -> cellData.getValue().getPeso().asString());
-        Vendedor.setCellValueFactory(cellData -> cellData.getValue().getVendedorCPF());
-        Comprador.setCellValueFactory(cellData -> cellData.getValue().getCompradorCPF());
-
-        // Add data to the table
-        vendasTable.setItems(historico);
+        //Não Deu Tempo De Fazer!!!!!!!!!
     }
 
     @FXML
